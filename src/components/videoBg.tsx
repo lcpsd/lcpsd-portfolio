@@ -7,7 +7,7 @@ interface VideoBgProps extends ChakraStyledOptions {
 export function VideoBg({ source, ...rest }: VideoBgProps) {
 
     return (
-        <Flex w='100%' h='100%' justify='center' align='center' {...rest} objectFit='cover' opacity="0.1">
+        <Flex w='100%' h='calc(100vh - 40px)' justify='center' align='center' {...rest} objectFit='cover' opacity="0.1">
             <video
                 preload="auto"
                 autoPlay

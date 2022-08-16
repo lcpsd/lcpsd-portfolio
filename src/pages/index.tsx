@@ -19,6 +19,11 @@ const Home: NextPage = () => {
       justify="center"
     >
       <HeaderSection />
+
+      <Flex direction="column" bg="quinary" h="100vh">
+        <Text color="primary">Projetos</Text>
+      </Flex>
+
     </Flex >
   )
 }
