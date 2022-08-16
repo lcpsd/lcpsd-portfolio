@@ -4,7 +4,7 @@ export const theme = extendTheme({
     styles: {
         global: {
             body: {
-                bg: 'quaternary',
+                bg: 'quinary',
                 color: "white"
             }
         },
@@ -18,7 +18,8 @@ export const theme = extendTheme({
         white: "#F3F3F3",
         primary: "#00FFD1",
         secondary: "#2DB8E7",
-        tertiary: "#37324A",
-        quaternary: "#282537",
+        tertiary: "#6753C7",
+        quaternary: "#37324A",
+        quinary: "#282537",
     }
 })
