@@ -6,6 +6,9 @@ export const theme = extendTheme({
             body: {
                 bg: 'quinary',
                 color: "white"
+            },
+            svg: {
+                strokeWidth: "1px"
             }
         },
         fonts: {
