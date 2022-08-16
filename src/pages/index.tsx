@@ -2,11 +2,9 @@ import { Box, Flex, Icon, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { Header } from '../components/Header'
 import { HeaderTitle } from '../components/HeaderTitle'
-import { FiMapPin, FiGithub, FiLinkedin } from "react-icons/fi"
-import { FloatingIcon } from '../components/FloatingIcon'
-import Link from 'next/link'
 import { Profile } from '../components/Profile'
 import { VideoBg } from '../components/videoBg'
+import { IoIosArrowForward } from "react-icons/io"
 
 const Home: NextPage = () => {
   return (
@@ -19,11 +17,10 @@ const Home: NextPage = () => {
       px={10}
       justify="center"
       position="unset"
-      zIndex="1"
     >
       <Header />
 
-      <Flex height="calc(100vh - 80px)" zIndex="1">
+      <Flex height="calc(100vh - 80px)">
         <HeaderTitle />
 
         <Flex flex="1" direction="column" align="center" justify="center" gap={10}>
@@ -37,15 +34,30 @@ const Home: NextPage = () => {
       </Flex>
 
       <Flex
+        transform="rotate(90deg)"
+        position="absolute"
+        right="1rem"
+        bottom="3rem"
+        zIndex="100"
+        align="center"
+        justify="center"
+        opacity="0.5"
+      >
+        <Text fontSize="1.5rem">Role</Text>
+        <Icon as={IoIosArrowForward} fontSize="3xl" />
+      </Flex>
+
+      <Flex
         position="absolute"
         h="100%"
         w='100vw'
         left="0"
         top="0"
+        zIndex="-1"
       >
         <VideoBg source='https://i.imgur.com/HoH9j5S.mp4' opacity={{ base: '0.5', xl: '1' }} objectFit='cover' />
       </Flex>
-    </Flex>
+    </Flex >
   )
 }
 

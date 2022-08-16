@@ -9,8 +9,8 @@ export function ProfilePicture({ pictureUrl, children, ...rest }: ProfilePicture
     return (
         <Box
             bgImage={`${pictureUrl}`}
-            bgPos="0 -2.5rem"
-            bgSize="450px"
+            bgPos="0 0"
+            bgSize="500px"
             bgRepeat="no-repeat"
             rounded="full"
             h="450px"
