@@ -14,28 +14,28 @@ export function HeaderSection() {
             <Flex height="calc(100vh - 80px)">
                 <HeaderTitle />
 
-                <Flex flex="1" direction="column" align="center" justify="center" gap={10}>
+                <Flex flex="1" direction="column" align="center" justify="center" gap={10} position="relative">
                     <Profile
                         profileUrl='images/profile-picture.jpeg'
                         githubUrl="https://github.com/lcpsd"
                         linkedinUrl="https://www.linkedin.com/in/lcpsd/"
                         location='Campo Grande - MS'
                     />
-                </Flex>
-            </Flex>
 
-            <Flex
-                transform="rotate(90deg)"
-                position="absolute"
-                right="1rem"
-                bottom="3rem"
-                zIndex="100"
-                align="center"
-                justify="center"
-                opacity="0.5"
-            >
-                <Text fontSize="1.5rem">Role</Text>
-                <Icon as={IoIosArrowForward} fontSize="3xl" />
+                    <Flex
+                        transform="rotate(90deg)"
+                        position="absolute"
+                        right="1rem"
+                        bottom="3rem"
+                        zIndex="100"
+                        align="center"
+                        justify="center"
+                        opacity="0.5"
+                    >
+                        <Text fontSize="1.5rem">Role</Text>
+                        <Icon as={IoIosArrowForward} fontSize="3xl" />
+                    </Flex>
+                </Flex>
             </Flex>
 
             <Flex

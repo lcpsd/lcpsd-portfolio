@@ -1,10 +1,5 @@
-import { Box, Flex, Icon, Text } from '@chakra-ui/react'
+import { Flex, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { Header } from '../components/Header'
-import { HeaderTitle } from '../components/HeaderTitle'
-import { Profile } from '../components/Profile'
-import { VideoBg } from '../components/videoBg'
-import { IoIosArrowForward } from "react-icons/io"
 import { HeaderSection } from '../components/HeaderSection'
 
 const Home: NextPage = () => {
@@ -20,8 +15,8 @@ const Home: NextPage = () => {
     >
       <HeaderSection />
 
-      <Flex direction="column" bg="quinary" h="100vh">
-        <Text color="primary">Projetos</Text>
+      <Flex direction="column" h="100vh" align="center" py={10}>
+        <Text color="primary" fontSize="3xl">Projetos</Text>
       </Flex>
 
     </Flex >
