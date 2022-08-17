@@ -1,6 +1,7 @@
 import { Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import { Container } from "../Container";
 import { DefaultTitle } from "../DefaultTitle";
+import { TechCard } from "../TechCard";
 
 export function TechSection() {
 
@@ -75,32 +76,7 @@ export function TechSection() {
             <SimpleGrid columns={3} spacing={10} mt="1rem">
                 {
                     techs.map(tech => (
-                        <Flex key={tech.id}
-                            h="100%"
-                            maxH="150px"
-                            w="100%"
-                            p={2}
-                            bg="quinary"
-                            border="1px"
-                            borderColor="primary"
-                            rounded="md"
-                        >
-                            <Img
-                                src={tech.logoUrl}
-                                flex="1"
-                                h="100%"
-                                w="auto"
-                            />
-
-                            <Flex
-                                align="center"
-                                justify="center"
-                                flex="3"
-                                p={2}
-                            >
-                                <Text fontSize="0.8rem">{tech.description}</Text>
-                            </Flex>
-                        </Flex>
+                        <TechCard data={tech} />
                     ))
                 }
             </SimpleGrid>
