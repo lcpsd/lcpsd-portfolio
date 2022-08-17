@@ -60,8 +60,8 @@ const Home: NextPage = () => {
         />
 
         <BigLight
-          top="80rem"
-          left="-50rem"
+          top={{ sm: "200rem", lg: "80rem" }}
+          left={{ sm: "-30rem", lg: "-50rem" }}
         />
       </Flex >
     </Box>
