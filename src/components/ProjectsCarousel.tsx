@@ -1,8 +1,5 @@
-import { Box, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import { A11y, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { ProjectBadge } from "./ProjectBadge";
-import { ProjectImage } from "./ProjectImage";
 import { ProjectSlide } from "./ProjectSlide";
 
 export function ProjectsCarousel() {
@@ -61,10 +58,12 @@ export function ProjectsCarousel() {
         <Swiper
             modules={[Pagination, A11y]}
             spaceBetween={20}
+            pagination={{ clickable: true }}
             style={{
                 width: "100%",
-                height: "100%"
+                height: "100%",
             }}
+
         >
             {
                 projects.map(project => (
@@ -72,7 +71,7 @@ export function ProjectsCarousel() {
                         key={project.id}
                         style={{
                             width: "100%",
-                            height: "100%",
+                            height: "100%"
                         }}
                     >
                         <ProjectSlide project={project} key={project.id} />

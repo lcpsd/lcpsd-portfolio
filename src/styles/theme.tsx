@@ -9,6 +9,13 @@ export const theme = extendTheme({
             },
             svg: {
                 strokeWidth: "1px"
+            },
+            '.swiper-pagination-bullet': {
+                background: "quaternary",
+                border: "1px",
+                borderColor: "primary",
+                height: "1rem",
+                width: "1rem"
             }
         },
         fonts: {
