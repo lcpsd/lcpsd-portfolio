@@ -18,7 +18,9 @@ export function TechCard({ data: { id, logoUrl, description } }: TechCardProps) 
             p={2}
             bg="quinary"
             border="1px"
-            borderColor="primary"
+            borderColor="transparent"
+            borderRightColor="primary"
+            borderTopColor="primary"
             rounded="md"
         >
             <Img

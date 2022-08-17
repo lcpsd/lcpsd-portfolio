@@ -76,7 +76,7 @@ export function TechSection() {
             <SimpleGrid columns={3} spacing={10} mt="1rem">
                 {
                     techs.map(tech => (
-                        <TechCard data={tech} />
+                        <TechCard data={tech} key={tech.id} />
                     ))
                 }
             </SimpleGrid>
