@@ -7,7 +7,7 @@ interface ContainerProps extends ChakraStyledOptions {
 export function Container({ children, ...rest }: ContainerProps) {
 
     return (
-        <Flex direction="column" h="100vh" align="center" py={10} position="relative" zIndex="10" {...rest}>
+        <Flex direction="column" h="100vh" align="center" justify="center" py={10} zIndex="10" {...rest}>
             {children}
         </Flex>
     )

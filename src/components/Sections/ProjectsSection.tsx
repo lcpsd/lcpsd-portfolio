@@ -1,12 +1,13 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { BigLight } from "../BigLight";
+import { Container } from "../Container";
 import { DefaultTitle } from "../DefaultTitle";
 import { ProjectsCarousel } from "../ProjectsCarousel";
 
 export function ProjectsSection() {
 
     return (
-        <Flex direction="column" h="100vh" align="center" py={10} position="relative" zIndex="10">
+        <Container position="relative">
 
             <DefaultTitle title="Projetos" />
 
@@ -17,6 +18,6 @@ export function ProjectsSection() {
                 m="auto"
             />
 
-        </Flex>
+        </Container>
     )
 }

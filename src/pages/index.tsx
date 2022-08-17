@@ -1,13 +1,13 @@
-import { Box, Flex, SimpleGrid } from '@chakra-ui/react'
+import { Box, Flex, Img, SimpleGrid, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { BgNoise } from '../components/BgNoise'
+import { Container } from '../components/Container'
 import { DefaultTitle } from '../components/DefaultTitle'
 import { HeaderSection } from '../components/Sections/HeaderSection'
 import { ProjectsSection } from '../components/Sections/ProjectsSection'
+import { TechSection } from '../components/Sections/TechsSection'
 
 const Home: NextPage = () => {
-
-  const techs = []
 
   return (
     <>
@@ -24,14 +24,7 @@ const Home: NextPage = () => {
 
         <ProjectsSection />
 
-        <Flex direction="column" justify="center" align="center">
-
-          <DefaultTitle title='Tecnologias' />
-
-          <SimpleGrid>
-
-          </SimpleGrid>
-        </Flex>
+        <TechSection />
 
       </Flex >
 
