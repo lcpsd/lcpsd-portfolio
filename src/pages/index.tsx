@@ -1,6 +1,7 @@
 import { Box, Flex, SimpleGrid } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { BgNoise } from '../components/BgNoise'
+import { DefaultTitle } from '../components/DefaultTitle'
 import { HeaderSection } from '../components/Sections/HeaderSection'
 import { ProjectsSection } from '../components/Sections/ProjectsSection'
 
@@ -25,7 +26,7 @@ const Home: NextPage = () => {
 
         <Flex direction="column" justify="center" align="center">
 
-
+          <DefaultTitle title='Tecnologias' />
 
           <SimpleGrid>
 
