@@ -1,28 +1,17 @@
 import { Box, Divider, Flex, Img, SimpleGrid, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import { SwiperSlide } from 'swiper/react'
 import { BgNoise } from '../components/BgNoise'
 import { Container } from '../components/Container'
+import { DefaultCarousel } from '../components/DefaultCarousel'
+import { DefaultDivider } from '../components/DefaultDivider'
 import { DefaultTitle } from '../components/DefaultTitle'
+import { CertificationSection } from '../components/Sections/CertificationsSection'
 import { HeaderSection } from '../components/Sections/HeaderSection'
 import { ProjectsSection } from '../components/Sections/ProjectsSection'
 import { TechSection } from '../components/Sections/TechsSection'
 
 const Home: NextPage = () => {
-
-  const certifications = [
-    {
-      id: 1,
-      imgLink: "https://i.imgur.com/dBJ3jUY.png"
-    },
-    {
-      id: 2,
-      imgLink: "https://i.imgur.com/dBJ3jUY.png"
-    },
-    {
-      id: 3,
-      imgLink: "https://i.imgur.com/dBJ3jUY.png"
-    },
-  ]
 
   return (
     <>
@@ -39,15 +28,15 @@ const Home: NextPage = () => {
 
         <ProjectsSection />
 
-        <Divider borderColor="quaternary" zIndex="1" />
+        <DefaultDivider />
 
         <TechSection />
 
-        <Divider borderColor="quaternary" zIndex="1" />
+        <DefaultDivider />
 
-        <Container>
-          <DefaultTitle title="Certificações" />
-        </Container>
+        <CertificationSection />
+
+        <DefaultDivider />
 
       </Flex >
 
