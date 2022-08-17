@@ -68,7 +68,15 @@ export function ProjectsCarousel() {
         >
             {
                 projects.map(project => (
-                    <ProjectSlide project={project} key={project.id} />
+                    <SwiperSlide
+                        key={project.id}
+                        style={{
+                            width: "100%",
+                            height: "100%",
+                        }}
+                    >
+                        <ProjectSlide project={project} key={project.id} />
+                    </SwiperSlide>
                 ))
             }
         </Swiper>
