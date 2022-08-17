@@ -37,7 +37,9 @@ export function CertificationSection() {
                                     bgSize="cover"
                                     borderRadius="xl"
                                     border="1px"
-                                    borderColor="primary"
+                                    borderColor="transparent"
+                                    borderRightColor="primary"
+                                    borderTopColor="primary"
                                 />
                             </Flex>
                         </SwiperSlide>
