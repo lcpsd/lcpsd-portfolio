@@ -14,6 +14,7 @@ export function BigLight({ ...rest }) {
             bgGradient='radial-gradient(primary, transparent, transparent)'
             filter="brightness(0.8)"
             opacity="0.2"
+            zIndex="-10"
             {...rest}
         />
     )

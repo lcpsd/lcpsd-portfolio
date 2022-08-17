@@ -1,4 +1,5 @@
 import { Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
+import { BigLight } from "../BigLight";
 import { Container } from "../Container";
 import { DefaultTitle } from "../DefaultTitle";
 import { TechCard } from "../TechCard";
@@ -80,6 +81,11 @@ export function TechSection() {
                     ))
                 }
             </SimpleGrid>
+
+            <BigLight
+                top="50rem"
+                m="auto"
+            />
         </Container>
     )
 }

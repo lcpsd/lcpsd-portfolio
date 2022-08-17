@@ -1,4 +1,4 @@
-import { Box, Flex, Img, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Divider, Flex, Img, SimpleGrid, Text } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { BgNoise } from '../components/BgNoise'
 import { Container } from '../components/Container'
@@ -8,6 +8,21 @@ import { ProjectsSection } from '../components/Sections/ProjectsSection'
 import { TechSection } from '../components/Sections/TechsSection'
 
 const Home: NextPage = () => {
+
+  const certifications = [
+    {
+      id: 1,
+      imgLink: "https://i.imgur.com/dBJ3jUY.png"
+    },
+    {
+      id: 2,
+      imgLink: "https://i.imgur.com/dBJ3jUY.png"
+    },
+    {
+      id: 3,
+      imgLink: "https://i.imgur.com/dBJ3jUY.png"
+    },
+  ]
 
   return (
     <>
@@ -24,7 +39,15 @@ const Home: NextPage = () => {
 
         <ProjectsSection />
 
+        <Divider borderColor="quaternary" zIndex="1" />
+
         <TechSection />
+
+        <Divider borderColor="quaternary" zIndex="1" />
+
+        <Container>
+          <DefaultTitle title="Certificações" />
+        </Container>
 
       </Flex >
 
