@@ -15,6 +15,9 @@ export function ProjectImage({ screenshotUrl, ...rest }: ProjectImageProps) {
             mx="auto"
             w="60%"
             h="auto"
+            border="1px"
+            borderEndColor="primary"
+            borderTopColor="primary"
             {...rest}
         />
     )

@@ -45,6 +45,7 @@ export function HeaderSection() {
                 left="0"
                 top="0"
                 zIndex="-1"
+                bg="quinary"
             >
                 <VideoBg source='https://i.imgur.com/HoH9j5S.mp4' opacity={{ base: '0.5', xl: '1' }} objectFit='cover' />
             </Flex>
