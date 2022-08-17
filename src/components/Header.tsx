@@ -1,33 +1,78 @@
-import { Flex, Icon, Link as ChakraLink, Text } from "@chakra-ui/react";
-import Link from "next/link";
-import { FiRepeat } from "react-icons/fi";
+import { Box, Flex, Icon, Img, Text } from '@chakra-ui/react'
+import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
+import { useMenuContext } from '../contexts/MenuContext'
+import { motion } from 'framer-motion'
+import { useIsXlarge } from '../hooks/useMediaQuery'
+import { DefaultLink } from './DefaultLink'
+import { MenuLinks } from './MenuLinks'
 
 export function Header() {
 
+    const { openMenu, setOpenMenu } = useMenuContext()
+    const isXLarge = useIsXlarge()
+
+    const variants = !isXLarge ? {
+        visible: { opacity: 1, left: "0rem", zIndex: 10, transition: { ease: "easeIn", duration: 0.3 } },
+        hidden: { opacity: 0, left: "-30rem", transition: { ease: "easeOut", duration: 0.3 } }
+    } : {
+        visible: { opacity: 1 },
+        hidden: { opacity: 1 },
+    }
+
     return (
-        <Flex justify="space-between" align="center" h="80px" w="100%" py={10}>
+        <Box
+            position={{ base: "absolute", lg: "sticky" }}
+            style={{
+                top: 0,
+                left: 0,
+                zIndex: 1000
+            }}>
+            <Flex
+                maxW="1200px"
+                w={{ base: "100%", lg: "initial" }}
+                m="0 auto"
+                h={{ base: "100vh", lg: "120px" }}
+                align="center"
+                justify={{ base: "center", lg: "space-between" }}
+                p="20px"
+                display="flex"
+                direction={{ base: "column", lg: "row" }}
+                position={{ base: "fixed", lg: "initial" }}
+                as={motion.div}
+                variants={variants}
+                initial={"hidden"}
+                animate={openMenu ? "visible" : "hidden"}
+                textTransform="uppercase"
+            >
 
-            <Text color="primary" fontSize="2xl" textTransform="uppercase" fontWeight="semibold">Lucas Cardoso</Text>
+                <Text fontSize="2xl" fontWeight="semibold" color="primary">Lucas Cardoso</Text>
 
-            <Link href="#" passHref>
-                <ChakraLink fontSize="xl" textTransform="uppercase">Projetos</ChakraLink>
-            </Link>
+                <Flex
+                    display="flex"
+                    direction={{ base: "column", lg: "row" }}
+                    gap={{ base: "20px", lg: "30px", '2xl': "40px" }}
+                    textAlign={{ base: "center", lg: "initial" }}
+                    fontSize={{ base: "1.5rem", lg: "1.1rem" }}
+                >
+                    <MenuLinks />
+                </Flex>
+            </Flex>
 
-            <Link href="#" passHref>
-                <ChakraLink fontSize="xl" textTransform="uppercase">Tecnologias</ChakraLink>
-            </Link>
-
-            <Link href="#" passHref>
-                <ChakraLink fontSize="xl" textTransform="uppercase">Certificações</ChakraLink>
-            </Link>
-
-            <Link href="#" passHref>
-                <ChakraLink fontSize="xl" textTransform="uppercase">Contato</ChakraLink>
-            </Link>
-
-            <Link href="#" passHref>
-                <ChakraLink fontSize="xl" textTransform="uppercase">| PT-BR <Icon fontSize="sm" as={FiRepeat} /></ChakraLink>
-            </Link>
-        </Flex>
+            <Flex
+                position="fixed"
+                right="1.5rem"
+                onClick={() => setOpenMenu(!openMenu)}
+                display={{ base: "flex", lg: "none" }}
+                w="100%"
+                left="0"
+                top="0"
+                p="10px"
+                align="center"
+                justify='flex-end'
+                zIndex={10}
+            >
+                <Icon as={!openMenu ? AiOutlineMenu : AiOutlineClose} color="white" fontSize="2rem" fontWeight="light" />
+            </Flex>
+        </Box>
     )
 }
