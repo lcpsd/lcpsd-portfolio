@@ -1,5 +1,6 @@
 import { Box, Flex } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import { BgNoise } from '../components/BgNoise'
 import { HeaderSection } from '../components/Sections/HeaderSection'
 import { ProjectsSection } from '../components/Sections/ProjectsSection'
 
@@ -8,17 +9,7 @@ const Home: NextPage = () => {
 
   return (
     <>
-      <Box
-        bgImg="/images/scratch-seamless.webp"
-        backgroundRepeat="repeat"
-        h="100%"
-        w="100%"
-        position="absolute"
-        zIndex="-2"
-        bgSize="200px"
-        mixBlendMode="hard-light"
-        opacity="0.05"
-      />
+      <BgNoise />
       <Flex
         direction="column"
         h="100%"
