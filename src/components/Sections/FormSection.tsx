@@ -100,7 +100,7 @@ export function FormSection() {
                 />
                 <Text className="error-message">{errors.applicationInfo?.message?.toString()}</Text>
 
-                <Button bg="primary" colorScheme="teal" color="quinary" type="submit">Enviar</Button>
+                <Button w="100%" bg="primary" colorScheme="teal" color="quinary" type="submit">Enviar</Button>
             </Flex>
 
             <Flex direction="column" mt="2rem" w="100%">
