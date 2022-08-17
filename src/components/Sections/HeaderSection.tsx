@@ -1,9 +1,9 @@
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { IoIosArrowForward } from "react-icons/io";
-import { Header } from "./Header";
-import { HeaderTitle } from "./HeaderTitle";
-import { Profile } from "./Profile";
-import { VideoBg } from "./videoBg";
+import { Header } from "../Header";
+import { HeaderTitle } from "../HeaderTitle";
+import { Profile } from "../Profile";
+import { VideoBg } from "../videoBg";
 
 export function HeaderSection() {
 

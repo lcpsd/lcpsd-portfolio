@@ -51,7 +51,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
             <Flex flex="1" direction="column" gap={10} justify="center">
                 <Box>
-                    <Text color="primary" fontSize="3xl">{project.title}</Text>
+                    <Text color="primary" fontSize="2xl">{project.title}</Text>
                     <Text>{project.description}</Text>
                 </Box>
 
