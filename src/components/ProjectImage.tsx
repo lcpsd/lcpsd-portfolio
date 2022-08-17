@@ -1,16 +1,16 @@
 import { ChakraStyledOptions, Img } from "@chakra-ui/react";
 
 interface ProjectImageProps extends ChakraStyledOptions {
-    screenshotLink: string;
+    screenshotUrl: string;
 }
 
-export function ProjectImage({ screenshotLink, ...rest }: ProjectImageProps) {
+export function ProjectImage({ screenshotUrl, ...rest }: ProjectImageProps) {
 
     return (
         <Img
             w="sm"
             h="auto"
-            src={screenshotLink}
+            src={screenshotUrl}
             rounded="md"
             position="absolute"
             my="auto"

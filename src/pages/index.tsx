@@ -3,7 +3,7 @@ import type { NextPage } from 'next'
 import { A11y, Pagination } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { HeaderSection } from '../components/HeaderSection'
-import { ProjectsSlide } from '../components/ProjectsSlide'
+import { ProjectsCarousel } from '../components/ProjectsCarousel'
 
 const Home: NextPage = () => {
 
@@ -23,7 +23,7 @@ const Home: NextPage = () => {
       <Flex direction="column" h="100vh" align="center" py={10}>
         <Text color="primary" fontSize="3xl">Projetos</Text>
 
-        <ProjectsSlide />
+        <ProjectsCarousel />
       </Flex>
 
     </Flex >
