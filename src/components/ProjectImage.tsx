@@ -8,13 +8,13 @@ export function ProjectImage({ screenshotUrl, ...rest }: ProjectImageProps) {
 
     return (
         <Img
-            w="sm"
-            h="auto"
             src={screenshotUrl}
             rounded="md"
             position="absolute"
             my="auto"
             mx="auto"
+            w="60%"
+            h="auto"
             {...rest}
         />
     )
