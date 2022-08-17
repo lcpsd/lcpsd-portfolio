@@ -11,9 +11,9 @@ export function BigLight({ ...rest }) {
             h={{ sm: "400vw", lg: "250vw" }}
             w={{ sm: "400vw", lg: "250vw" }}
             rounded="full"
-            bgGradient='radial-gradient(primary, transparent, transparent)'
-            filter="brightness(0.8)"
-            opacity="0.2"
+            bgGradient='radial-gradient(secondary, transparent, transparent)'
+            filter="brightness(0.4)"
+            opacity="1"
             zIndex="-10"
             {...rest}
         />

@@ -41,9 +41,9 @@ export const theme = extendTheme({
     colors: {
         white: "#F3F3F3",
         primary: "#00FFD1",
-        secondary: "#2DB8E7",
+        secondary: "#2d74e7",
         tertiary: "#6753C7",
         quaternary: "#37324A",
-        quinary: "#282537",
+        quinary: "#13101c",
     }
 })

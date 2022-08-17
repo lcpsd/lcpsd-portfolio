@@ -44,10 +44,10 @@ export function HeaderSection() {
                 w='100vw'
                 left="0"
                 top="0"
-                zIndex="-1"
+                zIndex="-10"
                 bg="quinary"
             >
-                <VideoBg source='https://i.imgur.com/HoH9j5S.mp4' opacity={{ base: '0.5', xl: '1' }} />
+                <VideoBg source='https://i.imgur.com/HoH9j5S.mp4' />
             </Flex>
         </Box>
     )
