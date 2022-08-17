@@ -1,5 +1,7 @@
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import { Box, Flex, SimpleGrid, Text, Link as ChakraLink } from "@chakra-ui/react";
+import Link from "next/link";
 import { SwiperSlide } from "swiper/react";
+import { DefaultLink } from "./DefaultLink";
 import { ProjectBadge } from "./ProjectBadge";
 import { ProjectImage } from "./ProjectImage";
 
@@ -12,6 +14,7 @@ interface ProjectProps {
     id: string | number;
     title: string;
     description: string;
+    url: string;
     techs: TechProps[];
     screenshots: string[];
 }
@@ -29,25 +32,27 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
             align="center"
             justify="center"
         >
-            <Flex flex="2" align="center" position="relative">
+            <DefaultLink url={project.url} flex="2">
+                <Flex align="center" position="relative" cursor="pointer">
 
-                <ProjectImage
-                    screenshotUrl={project.screenshots[0]}
-                    top="-5rem"
-                    right="0"
-                    left="-1rem"
-                    bottom="0"
-                    boxShadow="0px 0px 10px 0px black"
-                    zIndex="1"
-                />
+                    <ProjectImage
+                        screenshotUrl={project.screenshots[0]}
+                        top="-5rem"
+                        right="0"
+                        left="-1rem"
+                        bottom="0"
+                        boxShadow="0px 0px 10px 0px black"
+                        zIndex="1"
+                    />
 
-                <ProjectImage
-                    screenshotUrl={project.screenshots[1]}
-                    top="5rem"
-                    right="2rem"
-                    bottom="0"
-                />
-            </Flex>
+                    <ProjectImage
+                        screenshotUrl={project.screenshots[1]}
+                        top="5rem"
+                        right="2rem"
+                        bottom="0"
+                    />
+                </Flex>
+            </DefaultLink>
 
             <Flex flex="1" direction="column" gap={10} justify="center">
                 <Box>

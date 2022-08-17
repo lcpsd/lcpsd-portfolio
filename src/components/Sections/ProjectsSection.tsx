@@ -10,6 +10,7 @@ export function ProjectsSection() {
             id: 1,
             title: "Nome Projeto",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat earum enim rem, qui illo quisquam sequi suscipit, vero veniam eius, iste excepturi at harum quaerat accusamus officiis a voluptatum sint.",
+            url: "http://google.com",
             techs: [
                 {
                     logo: "https://i.imgur.com/eCD0M12.png",
@@ -34,6 +35,7 @@ export function ProjectsSection() {
             id: 2,
             title: "Nome Projeto",
             description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat earum enim rem, qui illo quisquam sequi suscipit, vero veniam eius, iste excepturi at harum quaerat accusamus officiis a voluptatum sint.",
+            url: "google.com",
             techs: [
                 {
                     logo: "https://i.imgur.com/eCD0M12.png",
