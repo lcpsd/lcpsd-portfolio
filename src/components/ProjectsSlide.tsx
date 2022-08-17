@@ -1,6 +1,7 @@
 import { Box, Flex, Img, SimpleGrid, Text } from "@chakra-ui/react";
 import { A11y, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { ProjectImage } from "./ProjectImage";
 
 export function ProjectsSlide() {
 
@@ -79,32 +80,22 @@ export function ProjectsSlide() {
                             justify="center"
                         >
                             <Flex flex="2" align="center" position="relative">
-                                <Img
-                                    w="sm"
-                                    h="auto"
-                                    src={project.screenshots[0]}
-                                    rounded="md"
-                                    position="absolute"
-                                    top="5rem"
-                                    right="2rem"
-                                    bottom="0"
-                                    my="auto"
-                                    mx="auto"
-                                />
 
-                                <Img
-                                    w="sm"
-                                    h="auto"
-                                    src={project.screenshots[1]}
-                                    rounded="md"
-                                    position="absolute"
+                                <ProjectImage
+                                    screenshotLink={project.screenshots[0]}
                                     top="-5rem"
                                     right="0"
                                     left="-1rem"
                                     bottom="0"
-                                    my="auto"
-                                    mx="auto"
                                     boxShadow="0px 0px 10px 0px black"
+                                    zIndex="1"
+                                />
+
+                                <ProjectImage
+                                    screenshotLink={project.screenshots[1]}
+                                    top="5rem"
+                                    right="2rem"
+                                    bottom="0"
                                 />
                             </Flex>
 
