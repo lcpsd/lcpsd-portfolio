@@ -1,6 +1,7 @@
 import { SwiperSlide } from "swiper/react";
 import { Container } from "../Container";
 import { DefaultCarousel } from "../DefaultCarousel";
+import { DefaultTitle } from "../DefaultTitle";
 import { ProjectSlide } from "../ProjectSlide";
 
 export function ProjectsSection() {
@@ -58,7 +59,8 @@ export function ProjectsSection() {
     ]
 
     return (
-        <Container>
+        <Container h={{ sm: "100%", lg: "100vh" }}>
+            <DefaultTitle title="Projetos" />
             <DefaultCarousel>
                 {
                     projects.map(project => (
@@ -66,7 +68,7 @@ export function ProjectsSection() {
                             key={project.id}
                             style={{
                                 width: "100%",
-                                height: "100%"
+                                height: "100%",
                             }}
                         >
                             <ProjectSlide project={project} key={project.id} />
