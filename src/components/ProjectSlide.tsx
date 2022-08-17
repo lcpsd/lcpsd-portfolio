@@ -1,6 +1,5 @@
-import { Box, Flex, SimpleGrid, Text, Link as ChakraLink } from "@chakra-ui/react";
-import Link from "next/link";
-import { SwiperSlide } from "swiper/react";
+import { Box, Flex, SimpleGrid, Text, Icon, Button } from "@chakra-ui/react";
+import { FiGithub } from "react-icons/fi";
 import { DefaultLink } from "./DefaultLink";
 import { ProjectBadge } from "./ProjectBadge";
 import { ProjectImage } from "./ProjectImage";
@@ -37,7 +36,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
                     <ProjectImage
                         screenshotUrl={project.screenshots[0]}
-                        top="-5rem"
+                        top="-7rem"
                         right="0"
                         left="-1rem"
                         bottom="0"
@@ -54,7 +53,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                 </Flex>
             </DefaultLink>
 
-            <Flex flex="1" direction="column" gap={10} justify="center">
+            <Flex flex="1" direction="column" gap={10} justify="center" h="100%">
                 <Box>
                     <Text color="primary" fontSize="2xl">{project.title}</Text>
                     <Text>{project.description}</Text>
@@ -71,6 +70,15 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                         ))
                     }
                 </SimpleGrid>
+
+                <DefaultLink url={project.url}>
+                    <Button
+                        background="quinary"
+                        color="white"
+                        colorScheme="black"
+                        gap={2}
+                    >Repositório <Icon as={FiGithub} /></Button>
+                </DefaultLink>
             </Flex>
         </Flex>
     )
