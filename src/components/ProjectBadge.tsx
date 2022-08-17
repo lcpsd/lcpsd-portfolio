@@ -11,9 +11,11 @@ export function ProjectBadge({ title, logoUrl, ...rest }: ProjectBadgeProps) {
         <Flex
             align="center"
             rounded="md"
-            bg="quaternary"
             h="70px"
             p={2}
+            bg="quinary"
+            borderLeft="1px"
+            borderColor="primary"
             {...rest}
         >
             <Img

@@ -12,14 +12,10 @@ export function ProjectsSection() {
             <ProjectsCarousel />
 
             <BigLight
-                right="-150rem"
-                top="-40rem"
+                top="-70rem"
+                m="auto"
             />
 
-            <BigLight
-                left="-150rem"
-                top="-80rem"
-            />
         </Flex>
     )
 }

@@ -8,8 +8,8 @@ export function BigLight({ ...rest }) {
     return (
         <Box
             position="absolute"
-            h="250vw"
-            w="250vw"
+            h="200vw"
+            w="200vw"
             rounded="full"
             bgGradient='radial-gradient(primary, transparent, transparent)'
             filter="brightness(0.8)"
