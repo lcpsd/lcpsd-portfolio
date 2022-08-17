@@ -47,14 +47,12 @@ const Home: NextPage = () => {
         <FormSection />
 
         <BigLight
-
           top="-20rem"
           m="auto"
           left="-120rem"
         />
 
         <BigLight
-
           top="20rem"
           left="-20rem"
           m="auto"
@@ -62,7 +60,6 @@ const Home: NextPage = () => {
         />
 
         <BigLight
-
           top="80rem"
           left="-50rem"
         />

@@ -16,6 +16,20 @@ export const theme = extendTheme({
                 borderColor: "primary",
                 height: "1rem",
                 width: "1rem"
+            },
+            "*": {
+                scrollBehavior: "smooth"
+            },
+            "::-webkit-scrollbar-track": {
+                background: "transparent"
+            },
+            "::-webkit-scrollbar-thumb": {
+                background: "primary",
+                borderRadius: "10px"
+            },
+            "::-webkit-scrollbar-thumb:hover": {
+                background: "primary",
+                filter: "brightness(0.8)"
             }
         },
         fonts: {
