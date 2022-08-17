@@ -1,12 +1,15 @@
-import { Box, Divider, Flex, Img, SimpleGrid, Text } from '@chakra-ui/react'
+import { Box, Button, Divider, Flex, Img, SimpleGrid, Text, Textarea } from '@chakra-ui/react'
 import type { NextPage } from 'next'
+import { useForm } from 'react-hook-form'
 import { SwiperSlide } from 'swiper/react'
 import { BgNoise } from '../components/BgNoise'
 import { Container } from '../components/Container'
 import { DefaultCarousel } from '../components/DefaultCarousel'
 import { DefaultDivider } from '../components/DefaultDivider'
+import { DefaultField } from '../components/DefaultField'
 import { DefaultTitle } from '../components/DefaultTitle'
 import { CertificationSection } from '../components/Sections/CertificationsSection'
+import { FormSection } from '../components/Sections/FormSection'
 import { HeaderSection } from '../components/Sections/HeaderSection'
 import { ProjectsSection } from '../components/Sections/ProjectsSection'
 import { TechSection } from '../components/Sections/TechsSection'
@@ -14,7 +17,9 @@ import { TechSection } from '../components/Sections/TechsSection'
 const Home: NextPage = () => {
 
   return (
-    <>
+    <Box
+      position="relative"
+    >
       <Flex
         direction="column"
         h="100%"
@@ -38,10 +43,9 @@ const Home: NextPage = () => {
 
         <DefaultDivider />
 
+        <FormSection />
       </Flex >
-
-      <BgNoise />
-    </>
+    </Box>
   )
 }
 

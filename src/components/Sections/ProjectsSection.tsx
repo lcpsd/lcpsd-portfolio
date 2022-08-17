@@ -75,7 +75,7 @@ export function ProjectsSection() {
                 }
             </DefaultCarousel>
             <BigLight
-                top="-50rem"
+                top="-70rem"
                 m="auto"
             />
         </Container>

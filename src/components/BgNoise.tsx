@@ -4,10 +4,10 @@ export function BgNoise() {
 
     return (
         <Box
-            bgImg="/images/scratch-seamless.webp"
+            bgImg="/images/noise.webp"
             backgroundRepeat="repeat"
             h="100%"
-            w="100%"
+            w="600vh"
             position="absolute"
             zIndex="-2"
             bgSize="200px"
