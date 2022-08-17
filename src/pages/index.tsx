@@ -1,4 +1,4 @@
-import { Box, Flex } from '@chakra-ui/react'
+import { Box, Flex, SimpleGrid } from '@chakra-ui/react'
 import type { NextPage } from 'next'
 import { BgNoise } from '../components/BgNoise'
 import { HeaderSection } from '../components/Sections/HeaderSection'
@@ -6,10 +6,10 @@ import { ProjectsSection } from '../components/Sections/ProjectsSection'
 
 const Home: NextPage = () => {
 
+  const techs = []
 
   return (
     <>
-      <BgNoise />
       <Flex
         direction="column"
         h="100%"
@@ -23,7 +23,18 @@ const Home: NextPage = () => {
 
         <ProjectsSection />
 
+        <Flex direction="column" justify="center" align="center">
+
+
+
+          <SimpleGrid>
+
+          </SimpleGrid>
+        </Flex>
+
       </Flex >
+
+      <BgNoise />
     </>
   )
 }
