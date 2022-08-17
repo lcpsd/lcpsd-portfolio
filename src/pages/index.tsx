@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import { useForm } from 'react-hook-form'
 import { SwiperSlide } from 'swiper/react'
 import { BgNoise } from '../components/BgNoise'
+import { BigLight } from '../components/BigLight'
 import { Container } from '../components/Container'
 import { DefaultCarousel } from '../components/DefaultCarousel'
 import { DefaultDivider } from '../components/DefaultDivider'
@@ -44,6 +45,27 @@ const Home: NextPage = () => {
         <DefaultDivider />
 
         <FormSection />
+
+        <BigLight
+
+          top="-20rem"
+          m="auto"
+          left="-120rem"
+        />
+
+        <BigLight
+
+          top="20rem"
+          left="-20rem"
+          m="auto"
+          opacity="0.5"
+        />
+
+        <BigLight
+
+          top="80rem"
+          left="-50rem"
+        />
       </Flex >
     </Box>
   )

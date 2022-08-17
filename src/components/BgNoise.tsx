@@ -9,7 +9,7 @@ export function BgNoise() {
             h="100%"
             w="600vh"
             position="absolute"
-            zIndex="-2"
+            zIndex="-10"
             bgSize="200px"
             mixBlendMode="hard-light"
             opacity="0.1"

@@ -81,12 +81,6 @@ export function TechSection() {
                     ))
                 }
             </SimpleGrid>
-
-            <BigLight
-
-                top="40rem"
-                m="auto"
-            />
         </Container>
     )
 }

@@ -1,6 +1,4 @@
-import { A11y, Pagination } from "swiper";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { BigLight } from "../BigLight";
+import { SwiperSlide } from "swiper/react";
 import { Container } from "../Container";
 import { DefaultCarousel } from "../DefaultCarousel";
 import { ProjectSlide } from "../ProjectSlide";
@@ -74,10 +72,6 @@ export function ProjectsSection() {
                     ))
                 }
             </DefaultCarousel>
-            <BigLight
-                top="-70rem"
-                m="auto"
-            />
         </Container>
     )
 }
