@@ -7,7 +7,7 @@ interface VideoBgProps extends ChakraStyledOptions {
 export function VideoBg({ source, ...rest }: VideoBgProps) {
 
     return (
-        <Flex w='100%' h='calc(100vh - 40px)' justify='center' align='center' {...rest} objectFit='cover' opacity="0.1">
+        <Flex w='100vw' h='100vh' bg="quinary" justify='center' align='center' opacity="1" {...rest}>
             <video
                 preload="auto"
                 autoPlay
@@ -15,10 +15,11 @@ export function VideoBg({ source, ...rest }: VideoBgProps) {
                 loop
                 playsInline
                 style={{
-                    height: 'auto',
-                    width: '100%',
+                    height: '100%',
+                    width: 'auto',
                     objectFit: 'cover',
-                    mixBlendMode: "hard-light"
+                    mixBlendMode: "hard-light",
+                    opacity: "0.5"
                 }}
                 id='video'>
                 <source src={source} type='video/mp4' />

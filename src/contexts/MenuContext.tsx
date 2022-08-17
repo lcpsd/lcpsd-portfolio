@@ -3,7 +3,7 @@ import { createContext, Dispatch, SetStateAction, useContext, useState } from "r
 
 interface MenuContextProps {
     openMenu: boolean;
-    setOpenMenu: Dispatch<SetStateAction<boolean>>;
+    setOpenMenu: (state: boolean) => void;
 }
 
 export const MenuContext = createContext({} as MenuContextProps)

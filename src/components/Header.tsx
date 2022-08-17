@@ -22,11 +22,10 @@ export function Header() {
     return (
         <Box
             position={{ base: "absolute", lg: "sticky" }}
-            style={{
-                top: 0,
-                left: 0,
-                zIndex: 1000
-            }}>
+            top="0"
+            left="0"
+            zIndex="1000"
+        >
             <Flex
                 maxW="1200px"
                 w={{ base: "100%", lg: "initial" }}
@@ -36,16 +35,14 @@ export function Header() {
                 justify={{ base: "center", lg: "space-between" }}
                 p="20px"
                 display="flex"
-                direction={{ base: "column", lg: "row" }}
                 position={{ base: "fixed", lg: "initial" }}
                 as={motion.div}
                 variants={variants}
                 initial={"hidden"}
                 animate={openMenu ? "visible" : "hidden"}
                 textTransform="uppercase"
+                bg={{ sm: "quinary", lg: "transparent" }}
             >
-
-                <Text fontSize="2xl" fontWeight="semibold" color="primary">Lucas Cardoso</Text>
 
                 <Flex
                     display="flex"

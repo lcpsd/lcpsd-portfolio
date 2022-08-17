@@ -4,7 +4,9 @@ import { DefaultLink } from "./DefaultLink";
 export function MenuLinks() {
 
     return (
-        <Flex fontSize="xl" gap={20}>
+        <Flex fontSize="xl" gap={20} direction={{ base: "column", lg: "row" }} justify="center" align="center">
+            <Text fontSize="2xl" fontWeight="semibold" color="primary" mr="auto">Lucas Cardoso</Text>
+
             <DefaultLink
                 target="_self"
                 url='#projects'
