@@ -5,6 +5,7 @@ import { DefaultField } from "../DefaultField";
 import { DefaultTitle } from "../DefaultTitle";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
+import { Section } from "../CurrentSection";
 
 export function FormSection() {
 
@@ -30,7 +31,7 @@ export function FormSection() {
 
 
     return (
-        <Container w="100%" maxW="500px" alignItems="stretch" mx="auto" textAlign="center" zIndex="10" h="100%">
+        <Section id="form" w="100%" maxW="500px" alignItems="stretch" mx="auto" textAlign="center" zIndex="10" h="100%">
 
             <DefaultTitle title='Orçamento' />
             <Text mb="3rem">Sem compromisso</Text>
@@ -107,6 +108,6 @@ export function FormSection() {
                 <Text>Ou tire suas dúvidas pelo whatsapp</Text>
                 <Button bg="tertiary" colorScheme="purple" color="white">Whatsapp</Button>
             </Flex>
-        </Container>
+        </Section>
     )
 }

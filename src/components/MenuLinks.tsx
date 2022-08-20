@@ -1,4 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
+import { ActiveLink } from "./ActiveLink";
 import { DefaultLink } from "./DefaultLink";
 
 export function MenuLinks() {
@@ -7,33 +8,29 @@ export function MenuLinks() {
         <Flex w="100%" fontSize={{ base: "3xl", md: "xl" }} gap={20} direction={{ base: "column", md: "row" }} justify="center" align="center">
             <Text fontWeight="semibold" mr={{ base: "initial", md: "auto" }} color="primary" >Lucas Cardoso</Text>
 
-            <DefaultLink
-                target="_self"
-                url='#projects'
+            <ActiveLink
+                href='#projects'
             >
                 <Text>Projetos</Text>
-            </DefaultLink>
+            </ActiveLink>
 
-            <DefaultLink
-                target="_self"
-                url='#techs'
+            <ActiveLink
+                href='#techs'
             >
                 <Text>Tecnologias</Text>
-            </DefaultLink>
+            </ActiveLink>
 
-            <DefaultLink
-                target="_self"
-                url='#certifications'
+            <ActiveLink
+                href="certifications"
             >
                 <Text>Certificações</Text>
-            </DefaultLink>
+            </ActiveLink>
 
-            <DefaultLink
-                target="_self"
-                url='#contact'
+            <ActiveLink
+                href='#form'
             >
                 <Text>Contato</Text>
-            </DefaultLink>
+            </ActiveLink>
         </Flex>
     )
 }

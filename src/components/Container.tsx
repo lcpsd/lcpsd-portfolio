@@ -1,4 +1,5 @@
 import { ChakraStyledOptions, Flex } from "@chakra-ui/react";
+import { Section } from "./CurrentSection";
 
 interface ContainerProps extends ChakraStyledOptions {
     children: JSX.Element | JSX.Element[];
@@ -7,8 +8,8 @@ interface ContainerProps extends ChakraStyledOptions {
 export function Container({ children, ...rest }: ContainerProps) {
 
     return (
-        <Flex direction="column" h="100vh" align="center" justify="center" py={10} zIndex="10" {...rest}>
+        <Section direction="column" h="100vh" align="center" justify="center" py={10} zIndex="10" {...rest}>
             {children}
-        </Flex>
+        </Section>
     )
 }

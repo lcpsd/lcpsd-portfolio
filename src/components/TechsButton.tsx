@@ -28,6 +28,7 @@ export function TechsButton({ techs, ...rest }: TechsButtonProps) {
                                         logoUrl={tech.logo}
                                         reounded="md"
                                         h="100px"
+                                        key={tech.title + tech.logo}
                                     />
                                 ))
                             }

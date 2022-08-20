@@ -1,5 +1,6 @@
 import { SwiperSlide } from "swiper/react";
 import { Container } from "../Container";
+import { Section } from "../CurrentSection";
 import { DefaultCarousel } from "../DefaultCarousel";
 import { DefaultTitle } from "../DefaultTitle";
 import { ProjectSlide } from "../ProjectSlide";
@@ -59,7 +60,7 @@ export function ProjectsSection() {
     ]
 
     return (
-        <Container h="100vh">
+        <Section h="100vh" id="projects">
             <DefaultTitle title="Projetos" lineHeight="0" />
             <DefaultCarousel>
                 {
@@ -76,6 +77,6 @@ export function ProjectsSection() {
                     ))
                 }
             </DefaultCarousel>
-        </Container>
+        </Section>
     )
 }

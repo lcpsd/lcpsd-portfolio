@@ -23,7 +23,8 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
-    "src/hooks/useMediaQuery.js"
+    "src/hooks/useMediaQuery.js",
+    "src/pages/_document.tsx"
   ],
   "exclude": [
     "node_modules"

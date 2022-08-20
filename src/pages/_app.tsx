@@ -6,12 +6,15 @@ import 'swiper/css/pagination';
 import '../styles/global.css'
 import { MenuContextProvider } from '../contexts/MenuContext';
 import { theme } from '../styles/theme';
+import { CurrentSectionContextProvider } from '../components/CurrentSection/Context';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <ChakraProvider resetCSS theme={theme}>
       <MenuContextProvider>
-        <Component {...pageProps} />
+        <CurrentSectionContextProvider>
+          <Component {...pageProps} />
+        </CurrentSectionContextProvider>
       </MenuContextProvider>
     </ChakraProvider>
   )

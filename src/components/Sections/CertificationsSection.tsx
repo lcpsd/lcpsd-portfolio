@@ -1,6 +1,7 @@
 import { Flex, Img } from "@chakra-ui/react";
 import { SwiperSlide } from "swiper/react";
 import { Container } from "../Container";
+import { Section } from "../CurrentSection";
 import { DefaultCarousel } from "../DefaultCarousel";
 import { DefaultTitle } from "../DefaultTitle";
 
@@ -22,7 +23,7 @@ export function CertificationSection() {
     ]
 
     return (
-        <Container h={{ base: "70vh", md: "100vh" }}>
+        <Section id="certifications" h={{ base: "70vh", md: "100vh" }}>
             <DefaultTitle title="Certificações" />
             <DefaultCarousel>
                 {
@@ -46,6 +47,6 @@ export function CertificationSection() {
                     ))
                 }
             </DefaultCarousel>
-        </Container>
+        </Section>
     )
 }
