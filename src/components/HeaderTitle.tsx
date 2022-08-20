@@ -1,23 +1,28 @@
-import { Flex, Text } from "@chakra-ui/react";
+import { ChakraStyledOptions, Flex, Text } from "@chakra-ui/react";
 
-export function HeaderTitle() {
+export function HeaderTitle({ ...rest }: ChakraStyledOptions) {
 
     return (
-        <Flex flex="1" align="center" justify="center" direction="column" textAlign="center">
+        <Flex
+            align="center"
+            justify="center"
+            direction="column"
+            textAlign="center"
+            {...rest}
+        >
             <Text
                 textTransform="uppercase"
-                fontSize="8xl"
+                fontSize={["2xl", "6xl", "7xl"]}
                 bgGradient="linear(to-t, tertiary, primary)"
                 backgroundClip="text"
                 textColor="transparent"
-                w="600px"
                 fontWeight="semibold"
-                lineHeight="5rem"
+                lineHeight="4rem"
             >Front-end JamStack</Text>
 
             <Text
                 textTransform="uppercase"
-                fontSize="3xl"
+                fontSize={["md", "xl", "2xl"]}
             >React | Next | TS | Chakra UI  E +
             </Text>
         </Flex>

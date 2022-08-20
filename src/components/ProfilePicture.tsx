@@ -9,12 +9,11 @@ export function ProfilePicture({ pictureUrl, children, ...rest }: ProfilePicture
     return (
         <Box
             bgImage={`${pictureUrl}`}
-            bgPos="0 0"
-            bgSize="500px"
+            bgSize={{ sm: "400px", lg: "400px", xl: "525px" }}
             bgRepeat="no-repeat"
             rounded="full"
-            h="450px"
-            w="450px"
+            h={{ sm: "350px", lg: "350px", xl: "450px" }}
+            w={{ sm: "350px", lg: "350px", xl: "450px" }}
             borderColor="primary !important"
             border="2px"
             boxShadow="0px 0px 200px 0px #00FFD1"

@@ -11,10 +11,16 @@ export function HeaderSection() {
         <Box>
             <Header />
 
-            <Flex height="calc(100vh - 80px)">
-                <HeaderTitle />
+            <Flex height="100vh" direction={{ sm: "column", md: "row" }}>
+                <HeaderTitle flex="1" />
 
-                <Flex flex="1" direction="column" align="center" justify="center" gap={10} position="relative">
+                <Flex
+                    flex={{ sm: "2", md: "1" }}
+                    direction="column"
+                    align="center"
+                    justify="center"
+                    gap={10}
+                    position="relative">
                     <Profile
                         profileUrl='images/profile-picture.jpeg'
                         githubUrl="https://github.com/lcpsd"
@@ -25,7 +31,7 @@ export function HeaderSection() {
                     <Flex
                         transform="rotate(90deg)"
                         position="absolute"
-                        right="1rem"
+                        right={{ sm: "-2rem", md: "1rem" }}
                         bottom="3rem"
                         zIndex="100"
                         align="center"

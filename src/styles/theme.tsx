@@ -5,7 +5,8 @@ export const theme = extendTheme({
         global: {
             body: {
                 bg: 'quinary',
-                color: "white"
+                color: "white",
+                overflowX: "hidden",
             },
             svg: {
                 strokeWidth: "1px"
