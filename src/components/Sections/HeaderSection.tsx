@@ -10,7 +10,7 @@ export function HeaderSection() {
 
     return (
         <Section id="header">
-            <Flex height={{ base: "100vh", md: "calc(100vh + 80px)" }} direction={{ base: "column", md: "row" }} w="100%">
+            <Flex height="100vh" direction={{ base: "column", md: "row" }} w="100%" pt={{ md: "3rem" }}>
                 <HeaderTitle flex="1" />
 
                 <Flex
@@ -26,21 +26,21 @@ export function HeaderSection() {
                         linkedinUrl="https://www.linkedin.com/in/lcpsd/"
                         location='Campo Grande - MS'
                     />
-
-                    <Flex
-                        transform="rotate(90deg)"
-                        position="absolute"
-                        right={{ base: "-2rem", md: "1rem" }}
-                        bottom="8rem"
-                        zIndex="100"
-                        align="center"
-                        justify="center"
-                        opacity="0.5"
-                    >
-                        <Text fontSize="1.5rem">Role</Text>
-                        <Icon as={IoIosArrowForward} fontSize="3xl" />
-                    </Flex>
                 </Flex>
+            </Flex>
+
+            <Flex
+                transform="rotate(90deg)"
+                position="absolute"
+                right="0"
+                zIndex="100"
+                align="center"
+                justify="center"
+                opacity="0.3"
+                color="primary"
+            >
+                <Text fontSize="1.5rem">Role</Text>
+                <Icon as={IoIosArrowForward} fontSize="3xl" />
             </Flex>
 
             <Flex
