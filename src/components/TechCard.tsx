@@ -1,4 +1,4 @@
-import { Flex, Img, Text } from "@chakra-ui/react";
+import { Box, Flex, Img, Text } from "@chakra-ui/react";
 
 interface TechCardProps {
     data: {
@@ -13,30 +13,27 @@ export function TechCard({ data: { id, logoUrl, description } }: TechCardProps) 
     return (
         <Flex key={id}
             h="100%"
-            maxH="150px"
             w="100%"
-            p={2}
+            p={5}
             bg="quinary"
             border="1px"
             borderColor="transparent"
-            borderRightColor="primary"
-            borderTopColor="primary"
+            borderBottomColor="primary"
             rounded="md"
+            gap={5}
         >
-            <Img
-                src={logoUrl}
-                flex="1"
-                h="100%"
-                w="auto"
-            />
+            <Flex flex="1" align="center" justify="center">
+                <Img
+                    src={logoUrl}
+                    h="auto"
+                    w="100%"
+                    maxH="100px"
+                    maxW="100px"
+                />
+            </Flex>
 
-            <Flex
-                align="center"
-                justify="center"
-                flex="3"
-                p={2}
-            >
-                <Text fontSize="0.8rem">{description}</Text>
+            <Flex align="center" justify="center" flex="2" p={2}>
+                <Text fontSize="1rem">{description}</Text>
             </Flex>
         </Flex>
     )
