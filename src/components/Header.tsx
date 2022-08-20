@@ -49,7 +49,6 @@ export function Header() {
                     direction={{ base: "column", lg: "row" }}
                     gap={{ base: "20px", lg: "30px", '2xl': "40px" }}
                     textAlign={{ base: "center", lg: "initial" }}
-                    fontSize={{ base: "1.5rem", lg: "1.1rem" }}
                 >
                     <MenuLinks />
                 </Flex>
