@@ -5,7 +5,7 @@ export function MenuLinks() {
 
     return (
         <Flex w="100%" fontSize={{ base: "3xl", md: "xl" }} gap={20} direction={{ base: "column", lg: "row" }} justify="center" align="center">
-            <Text fontWeight="semibold" mr="auto" color="primary" >Lucas Cardoso</Text>
+            <Text fontWeight="semibold" mr={{ base: "initial", lg: "auto" }} color="primary" >Lucas Cardoso</Text>
 
             <DefaultLink
                 target="_self"

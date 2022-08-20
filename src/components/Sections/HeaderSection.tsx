@@ -11,7 +11,7 @@ export function HeaderSection() {
         <Box>
             <Header />
 
-            <Flex height="100vh" direction={{ sm: "column", md: "row" }}>
+            <Flex height={{ base: "100vh", md: "calc(100vh + 80px)" }} direction={{ sm: "column", md: "row" }}>
                 <HeaderTitle flex="1" />
 
                 <Flex
@@ -32,7 +32,7 @@ export function HeaderSection() {
                         transform="rotate(90deg)"
                         position="absolute"
                         right={{ sm: "-2rem", md: "1rem" }}
-                        bottom="3rem"
+                        bottom="8rem"
                         zIndex="100"
                         align="center"
                         justify="center"

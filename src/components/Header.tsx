@@ -21,10 +21,11 @@ export function Header() {
 
     return (
         <Box
-            position={{ base: "absolute", lg: "sticky" }}
+            position="absolute"
             top="0"
             left="0"
             zIndex="1000"
+            w="100%"
         >
             <Flex
                 maxW="1200px"
