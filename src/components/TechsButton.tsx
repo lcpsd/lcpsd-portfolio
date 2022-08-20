@@ -43,6 +43,7 @@ export function TechsButton({ techs, ...rest }: TechsButtonProps) {
                 colorScheme="teal.400"
                 display={{ base: "block", md: "none" }}
                 onClick={onOpen}
+                w="100%"
                 {...rest}
             >Tecnologias</Button>
         </>

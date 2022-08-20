@@ -92,7 +92,10 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                         >Repositório <Icon as={FiGithub} /></Button>
                     </DefaultLink>
 
-                    <TechsButton techs={project.techs} />
+                    <Box flex="1">
+                        <TechsButton techs={project.techs} />
+                    </Box>
+
                 </Flex>
             </Flex>
         </Flex>
