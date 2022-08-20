@@ -2,14 +2,13 @@ import { Box, Flex, Icon, Img, Text } from '@chakra-ui/react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { useMenuContext } from '../contexts/MenuContext'
 import { motion } from 'framer-motion'
-import { useIsXlarge } from '../hooks/useMediaQuery'
-import { DefaultLink } from './DefaultLink'
+import { useIsMedium } from '../hooks/useMediaQuery'
 import { MenuLinks } from './MenuLinks'
 
 export function Header() {
 
     const { openMenu, setOpenMenu } = useMenuContext()
-    const isXLarge = useIsXlarge()
+    const isXLarge = useIsMedium()
 
     const variants = !isXLarge ? {
         visible: { opacity: 1, left: "0rem", zIndex: 10, transition: { ease: "easeIn", duration: 0.3 } },
@@ -29,27 +28,27 @@ export function Header() {
         >
             <Flex
                 maxW="1200px"
-                w={{ base: "100%", lg: "initial" }}
+                w={{ base: "100%", md: "initial" }}
                 m="0 auto"
-                h={{ base: "100vh", lg: "120px" }}
+                h={{ base: "100vh", md: "120px" }}
                 align="center"
-                justify={{ base: "center", lg: "space-between" }}
+                justify={{ base: "center", md: "space-between" }}
                 p="20px"
                 display="flex"
-                position={{ base: "fixed", lg: "initial" }}
+                position={{ base: "fixed", md: "initial" }}
                 as={motion.div}
                 variants={variants}
                 initial={"hidden"}
                 animate={openMenu ? "visible" : "hidden"}
                 textTransform="uppercase"
-                bg={{ base: "quinary", lg: "transparent" }}
+                bg={{ base: "quinary", md: "transparent" }}
             >
 
                 <Flex
                     display="flex"
-                    direction={{ base: "column", lg: "row" }}
-                    gap={{ base: "20px", lg: "30px", '2xl': "40px" }}
-                    textAlign={{ base: "center", lg: "initial" }}
+                    direction={{ base: "column", md: "row" }}
+                    gap={{ base: "20px", md: "30px", '2xl': "40px" }}
+                    textAlign={{ base: "center", md: "initial" }}
                     w="100%"
                 >
                     <MenuLinks />
@@ -60,7 +59,7 @@ export function Header() {
                 position="fixed"
                 right="1.5rem"
                 onClick={() => setOpenMenu(!openMenu)}
-                display={{ base: "flex", lg: "none" }}
+                display={{ base: "flex", md: "none" }}
                 w="100%"
                 left="0"
                 top="0"
