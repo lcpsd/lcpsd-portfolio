@@ -40,7 +40,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                         screenshotUrl={project.screenshots[0]}
                         top="-7rem"
                         right="0"
-                        left="-10rem"
+                        left="-8rem"
                         bottom="0"
                         boxShadow="0px 0px 10px 0px black"
                         zIndex="1"
