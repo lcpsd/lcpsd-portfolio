@@ -26,15 +26,14 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
     return (
         <Flex
-            w={{ base: "100%", md: "90vw", xl: "100%" }}
+            w={{ base: "100%", md: "90vw", lg: "100%" }}
             mx="auto"
-            minH="100vh"
-            h="100%"
+            h={{ base: "100%", md: "100vh" }}
             align="center"
             justify="center"
             direction={{ base: "column", lg: "row" }}
         >
-            <DefaultLink url={project.url} flex="2" h="100%" w="100%">
+            <DefaultLink url={project.url} flex="1" h="100%" w="100%">
                 <Flex align="center" position="relative" cursor="pointer" h={{ base: "300px", lg: "100%" }} w="100%">
 
                     <ProjectImage
@@ -63,7 +62,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                 </Box>
 
                 <Flex direction="column" flex="1" gap={5}>
-                    <SimpleGrid columns={2} spacing={5}>
+                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
                         {
                             project.techs.map(tech => (
                                 <ProjectBadge

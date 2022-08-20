@@ -10,7 +10,7 @@ export function ProjectBadge({ title, logoUrl, ...rest }: ProjectBadgeProps) {
     return (
         <Flex
             align="center"
-            h="70px"
+            h={{ base: "100%", md: "70px" }}
             p={2}
             bg="#161325"
             borderBottom="1px"
@@ -19,11 +19,11 @@ export function ProjectBadge({ title, logoUrl, ...rest }: ProjectBadgeProps) {
         >
             <Img
                 src={logoUrl}
-                h="50px"
+                h="100%"
                 w="auto"
                 flex="1"
             />
-            <Text flex="3" textAlign="center" fontSize="xl">{title}</Text>
+            <Text flex="3" textAlign="center" fontSize={{ base: "3xl", md: "xl" }}>{title}</Text>
         </Flex>
     )
 }
