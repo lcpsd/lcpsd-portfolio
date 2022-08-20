@@ -1,12 +1,23 @@
-import { Box, ChakraStyledOptions } from "@chakra-ui/react";
+import { Box, chakra, ChakraStyledOptions } from "@chakra-ui/react";
+import { isValidMotionProp, motion } from "framer-motion";
 
 interface ProfilePicture extends ChakraStyledOptions {
     pictureUrl: string;
 }
 
 export function ProfilePicture({ pictureUrl, ...rest }: ProfilePicture) {
+
+    const ChakraBox = chakra(motion.div, {
+        shouldForwardProp: isValidMotionProp,
+    })
+
+    const variants = {
+        start: { boxShadow: "0px 0px 50px -20px #00FFD1" },
+        finish: { boxShadow: "0px 0px 300px 0px #00FFD1" }
+    }
+
     return (
-        <Box
+        <ChakraBox
             bgImage={`${pictureUrl}`}
             bgSize={{ base: "400px", lg: "400px", xl: "525px" }}
             bgRepeat="no-repeat"
@@ -15,10 +26,19 @@ export function ProfilePicture({ pictureUrl, ...rest }: ProfilePicture) {
             w={{ base: "350px", lg: "350px", xl: "450px" }}
             borderColor="primary !important"
             border="2px"
-            boxShadow="0px 0px 200px 0px #00FFD1"
             position="relative"
+            initial="start"
+            animate="finish"
+            variants={variants}
+            // @ts-ignore
+            transition={{
+                duration: 2,
+                ease: "easeInOut",
+                repeat: "Infinity",
+                repeatType: "reverse",
+            }}
             {...rest}
         >
-        </Box>
+        </ChakraBox>
     )
 }
