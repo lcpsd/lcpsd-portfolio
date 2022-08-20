@@ -14,7 +14,7 @@ export function ProjectBadge({ title, logoUrl, ...rest }: ProjectBadgeProps) {
             h="70px"
             p={2}
             bg="quinary"
-            borderRight="1px"
+            borderBottom="1px"
             borderColor="primary"
             {...rest}
         >
