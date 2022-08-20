@@ -66,6 +66,7 @@ export function Header() {
                 align="center"
                 justify='flex-end'
                 zIndex={10}
+                cursor="pointer"
             >
                 <Icon as={!openMenu ? AiOutlineMenu : AiOutlineClose} color="white" fontSize="2rem" fontWeight="light" />
             </Flex>
