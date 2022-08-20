@@ -42,7 +42,7 @@ export function Header() {
                 initial={"hidden"}
                 animate={openMenu ? "visible" : "hidden"}
                 textTransform="uppercase"
-                bg={{ sm: "quinary", lg: "transparent" }}
+                bg={{ base: "quinary", lg: "transparent" }}
             >
 
                 <Flex

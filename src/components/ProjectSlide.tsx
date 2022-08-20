@@ -26,14 +26,16 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
     return (
         <Flex
-            w="100%"
+            w={{ base: "100%", md: "500px", xl: "100%" }}
+            mx="auto"
+            minH="100vh"
             h="100%"
             align="center"
             justify="center"
-            direction={{ sm: "column", lg: "row" }}
+            direction={{ base: "column", lg: "row" }}
         >
             <DefaultLink url={project.url} flex="2" h="100%" w="100%">
-                <Flex align="center" position="relative" cursor="pointer" h={{ sm: "300px", lg: "100%" }} w="100%">
+                <Flex align="center" position="relative" cursor="pointer" h={{ base: "300px", lg: "100%" }} w="100%">
 
                     <ProjectImage
                         screenshotUrl={project.screenshots[0]}

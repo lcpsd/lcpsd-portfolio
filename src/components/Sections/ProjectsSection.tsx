@@ -59,7 +59,7 @@ export function ProjectsSection() {
     ]
 
     return (
-        <Container h={{ sm: "100%", lg: "100vh" }}>
+        <Container h={{ base: "100%", lg: "100vh" }} gap={5}>
             <DefaultTitle title="Projetos" />
             <DefaultCarousel>
                 {

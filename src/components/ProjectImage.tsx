@@ -13,6 +13,7 @@ export function ProjectImage({ screenshotUrl, ...rest }: ProjectImageProps) {
             position="absolute"
             my="auto"
             mx="auto"
+            maxW="400px"
             w="60%"
             h="auto"
             border="1px"
