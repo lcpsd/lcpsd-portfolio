@@ -24,8 +24,8 @@ export function VideoBg({ source, ...rest }: VideoBgProps) {
                 loop
                 playsInline
                 style={{
-                    height: '100%',
-                    width: 'auto',
+                    height: '100vh',
+                    width: '100vw',
                     objectFit: 'cover',
                     mixBlendMode: "difference",
                     opacity: "0.2"

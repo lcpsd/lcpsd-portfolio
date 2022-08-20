@@ -51,7 +51,6 @@ export function HeaderSection() {
                 left="0"
                 top="0"
                 zIndex="-10"
-                bg="quinary"
             >
                 <VideoBg source='https://i.imgur.com/HoH9j5S.mp4' />
             </Flex>
