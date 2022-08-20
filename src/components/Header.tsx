@@ -49,6 +49,7 @@ export function Header() {
                     direction={{ base: "column", lg: "row" }}
                     gap={{ base: "20px", lg: "30px", '2xl': "40px" }}
                     textAlign={{ base: "center", lg: "initial" }}
+                    w="100%"
                 >
                     <MenuLinks />
                 </Flex>
