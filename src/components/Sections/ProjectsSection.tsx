@@ -59,8 +59,8 @@ export function ProjectsSection() {
     ]
 
     return (
-        <Container h={{ base: "100%", md: "110vh" }} gap={5}>
-            <DefaultTitle title="Projetos" />
+        <Container h="100vh">
+            <DefaultTitle title="Projetos" lineHeight="0" />
             <DefaultCarousel>
                 {
                     projects.map(project => (

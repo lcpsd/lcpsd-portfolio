@@ -26,21 +26,21 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
     return (
         <Flex
-            w={{ base: "100%", md: "90vw", lg: "100%" }}
+            w="100%"
             mx="auto"
-            h={{ base: "100%", md: "100vh" }}
+            h="100%"
             align="center"
             justify="center"
-            direction={{ base: "column", lg: "row" }}
+            direction={{ base: "column", md: "row" }}
         >
             <DefaultLink url={project.url} flex="1" h="100%" w="100%">
                 <Flex align="center" position="relative" cursor="pointer" h={{ base: "300px", md: "100%" }} w="100%">
 
                     <ProjectImage
                         screenshotUrl={project.screenshots[0]}
-                        top="-7rem"
+                        top="-5rem"
                         right="0"
-                        left="-8rem"
+                        left="-7rem"
                         bottom="0"
                         boxShadow="0px 0px 10px 0px black"
                         zIndex="1"
@@ -55,14 +55,19 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                 </Flex>
             </DefaultLink>
 
-            <Flex flex="1" direction={{ base: "column", md: "row", lg: "column" }} gap={5} justify="center">
+            <Flex flex="1"
+                px={5}
+                direction="column"
+                gap={5}
+                justify="center"
+                align={{ base: "initial", md: "center" }}>
                 <Box flex="1">
                     <Text color="primary" fontSize="2xl">{project.title}</Text>
                     <Text>{project.description}</Text>
                 </Box>
 
-                <Flex direction="column" flex="1" gap={5}>
-                    <SimpleGrid columns={{ base: 1, md: 2 }} spacing={5}>
+                <Flex direction="column" flex="1" gap={5} justify="center" w="100%">
+                    <SimpleGrid columns={{ base: 2, lg: 3 }} spacing={5} display={{ base: "none", md: "grid" }} w="100%">
                         {
                             project.techs.map(tech => (
                                 <ProjectBadge
@@ -80,7 +85,6 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                             color="white"
                             colorScheme="black"
                             gap={2}
-                            marginBottom="4em"
                             w="100%"
                             border="1px"
                             borderColor="primary"

@@ -18,7 +18,7 @@ const Home: NextPage = () => {
         direction="column"
         h="100%"
         w="100%"
-        maxW="920px"
+        maxW="1280px"
         mx="auto"
         px={{ base: 5, md: 10 }}
         justify="center"
