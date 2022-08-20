@@ -22,6 +22,10 @@ const CustomLink = styled.span<CustomLinkProps>`
 
         position: relative;
 
+        font-size: medium;
+
+        cursor: pointer;
+
         ::after{
             transition: width ease-in 0.2s;
 
