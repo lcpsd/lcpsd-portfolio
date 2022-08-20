@@ -1,0 +1,10 @@
+type Profile @model @auth(rules: [{allow: public, operations: [read]}]) {
+  id: ID!
+  avatarUrl: String
+  name: String
+  linkedIn: String
+  github: String
+  whatsapp: String
+  location: String
+}
+ 

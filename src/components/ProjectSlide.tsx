@@ -74,7 +74,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                                 <TechBadge
                                     logoUrl={tech.logo}
                                     title={tech.title}
-                                    key={tech.title}
+                                    key={tech.title + tech.logo}
                                 />
                             ))
                         }

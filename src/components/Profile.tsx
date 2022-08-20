@@ -3,15 +3,21 @@ import Link from "next/link";
 import { FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
 import { FloatingIcon } from "./FloatingIcon";
 import { ProfilePicture } from "./ProfilePicture";
-
-interface ProfileProps extends ChakraStyledOptions {
-    profileUrl: string;
-    linkedinUrl: string;
-    githubUrl: string;
-    location: string;
-}
+import { DataStore } from '@aws-amplify/datastore';
+import { Profile as ProfileModel } from '../models';
+import { useEffect } from "react";
+import { ProfileProps } from "../types/profileProps";
 
 export function Profile({ pictureUrl, linkedinUrl, githubUrl, location, ...rest }: ProfileProps) {
+
+    async function FetchUserProfile() {
+        const data = await DataStore.query(ProfileModel)
+        console.log(data)
+    }
+
+    useEffect(() => {
+        FetchUserProfile()
+    }, [])
 
     return (
         <Box>
