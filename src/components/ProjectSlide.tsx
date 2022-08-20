@@ -1,8 +1,9 @@
 import { Box, Flex, SimpleGrid, Text, Icon, Button } from "@chakra-ui/react";
 import { FiGithub } from "react-icons/fi";
 import { DefaultLink } from "./DefaultLink";
-import { ProjectBadge } from "./TechBadge";
+import { TechBadge } from "./TechBadge";
 import { ProjectImage } from "./ProjectImage";
+import { TechsButton } from "./TechsButton";
 
 interface TechProps {
     logo: string;
@@ -38,7 +39,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
                     <ProjectImage
                         screenshotUrl={project.screenshots[0]}
-                        top="-5rem"
+                        top="-3rem"
                         right="0"
                         left="-7rem"
                         bottom="0"
@@ -48,8 +49,8 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
                     <ProjectImage
                         screenshotUrl={project.screenshots[1]}
-                        top="5rem"
-                        right="2rem"
+                        top="8rem"
+                        right="1rem"
                         bottom="0"
                     />
                 </Flex>
@@ -70,7 +71,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                     <SimpleGrid columns={{ base: 2, lg: 3 }} spacing={5} display={{ base: "none", md: "grid" }} w="100%">
                         {
                             project.techs.map(tech => (
-                                <ProjectBadge
+                                <TechBadge
                                     logoUrl={tech.logo}
                                     title={tech.title}
                                     key={tech.title}
@@ -90,6 +91,8 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                             borderColor="primary"
                         >Repositório <Icon as={FiGithub} /></Button>
                     </DefaultLink>
+
+                    <TechsButton techs={project.techs} />
                 </Flex>
             </Flex>
         </Flex>

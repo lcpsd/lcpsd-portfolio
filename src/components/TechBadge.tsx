@@ -1,11 +1,11 @@
-import { Flex, Img, Text } from "@chakra-ui/react";
+import { ChakraStyledOptions, Flex, Img, Text } from "@chakra-ui/react";
 
-interface ProjectBadgeProps {
+interface ProjectBadgeProps extends ChakraStyledOptions {
     logoUrl: string;
     title: string;
 }
 
-export function ProjectBadge({ title, logoUrl, ...rest }: ProjectBadgeProps) {
+export function TechBadge({ title, logoUrl, ...rest }: ProjectBadgeProps) {
 
     return (
         <Flex
