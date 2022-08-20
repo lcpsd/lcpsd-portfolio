@@ -20,17 +20,6 @@ export const theme = extendTheme({
             "*": {
                 scrollBehavior: "smooth"
             },
-            "::-webkit-scrollbar-track": {
-                background: "transparent"
-            },
-            "::-webkit-scrollbar-thumb": {
-                background: "primary",
-                borderRadius: "10px"
-            },
-            "::-webkit-scrollbar-thumb:hover": {
-                background: "primary",
-                filter: "brightness(0.8)"
-            }
         },
         fonts: {
             heading: 'Poppins',
