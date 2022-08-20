@@ -12,7 +12,7 @@ export function HeaderTitle({ ...rest }: ChakraStyledOptions) {
         >
             <Text
                 textTransform="uppercase"
-                fontSize={["2xl", "6xl", "7xl"]}
+                fontSize={["5xl", "6xl", "7xl"]}
                 bgGradient="linear(to-t, tertiary, primary)"
                 backgroundClip="text"
                 textColor="transparent"
@@ -22,7 +22,7 @@ export function HeaderTitle({ ...rest }: ChakraStyledOptions) {
 
             <Text
                 textTransform="uppercase"
-                fontSize={["md", "xl", "2xl"]}
+                fontSize={["lg", "xl", "2xl"]}
             >React | Next | TS | Chakra UI  E +
             </Text>
         </Flex>

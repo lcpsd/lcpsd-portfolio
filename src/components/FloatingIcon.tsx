@@ -15,7 +15,6 @@ export function FloatingIcon({ icon, ...rest }: FloatingIconProps) {
             color="primary"
             border="1px"
             borderColor="primary"
-            position="absolute"
             rounded="full"
             h="50px"
             w="50px"

@@ -20,7 +20,7 @@ const Home: NextPage = () => {
         w="100%"
         maxW="1280px"
         mx="auto"
-        px={10}
+        px={5}
         justify="center"
       >
         <HeaderSection />

@@ -15,26 +15,19 @@ export function Profile({ pictureUrl, linkedinUrl, githubUrl, location, ...rest 
 
     return (
         <Box>
-            <ProfilePicture
-                pictureUrl='images/profile-picture.jpeg'
-            >
+            <ProfilePicture pictureUrl='images/profile-picture.jpeg' />
+
+            <Flex w="100%" justify="center" py={5} gap={5}>
                 <Link href={githubUrl}>
-                    <FloatingIcon
-                        icon={FiGithub}
-                        right="0"
-                        top="-1rem"
-                    />
+                    <FloatingIcon icon={FiGithub} />
                 </Link>
 
                 <Link href={linkedinUrl}>
-                    <FloatingIcon
-                        icon={FiLinkedin}
-                        right="-4rem"
-                        top="4rem"
-                    />
+                    <FloatingIcon icon={FiLinkedin} />
                 </Link>
-            </ProfilePicture>
-            <Flex align="center" justify="center" mt="1rem">
+            </Flex>
+
+            <Flex align="center" justify="center">
                 <Icon as={FiMapPin} fontSize="2rem" />
                 <Text fontSize="2xl" color="primary">{location}</Text>
             </Flex>

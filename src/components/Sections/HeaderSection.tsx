@@ -11,14 +11,14 @@ export function HeaderSection() {
         <Box>
             <Header />
 
-            <Flex height={{ base: "100vh", md: "calc(100vh + 80px)" }} direction={{ base: "column", md: "row" }}>
+            <Flex height={{ base: "100vh", md: "calc(100vh + 80px)" }} direction={{ base: "column", md: "row" }} w="100%">
                 <HeaderTitle flex="1" />
 
                 <Flex
-                    flex={{ base: "2", md: "1" }}
+                    flex={{ base: "2.5", md: "1" }}
                     direction="column"
                     align="center"
-                    justify="center"
+                    justify={{ base: "flex-start", md: "center" }}
                     gap={10}
                     position="relative">
                     <Profile

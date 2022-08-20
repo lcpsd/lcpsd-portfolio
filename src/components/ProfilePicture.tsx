@@ -2,10 +2,9 @@ import { Box, ChakraStyledOptions } from "@chakra-ui/react";
 
 interface ProfilePicture extends ChakraStyledOptions {
     pictureUrl: string;
-    children: JSX.Element | JSX.Element[];
 }
 
-export function ProfilePicture({ pictureUrl, children, ...rest }: ProfilePicture) {
+export function ProfilePicture({ pictureUrl, ...rest }: ProfilePicture) {
     return (
         <Box
             bgImage={`${pictureUrl}`}
@@ -20,7 +19,6 @@ export function ProfilePicture({ pictureUrl, children, ...rest }: ProfilePicture
             position="relative"
             {...rest}
         >
-            {children}
         </Box>
     )
 }
