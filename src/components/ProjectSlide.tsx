@@ -34,7 +34,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
             direction={{ base: "column", lg: "row" }}
         >
             <DefaultLink url={project.url} flex="1" h="100%" w="100%">
-                <Flex align="center" position="relative" cursor="pointer" h={{ base: "300px", lg: "100%" }} w="100%">
+                <Flex align="center" position="relative" cursor="pointer" h={{ base: "300px", md: "100%" }} w="100%">
 
                     <ProjectImage
                         screenshotUrl={project.screenshots[0]}

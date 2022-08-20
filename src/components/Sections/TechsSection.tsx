@@ -74,7 +74,7 @@ export function TechSection() {
 
             <DefaultTitle title='Tecnologias' />
 
-            <SimpleGrid columns={{ base: 1, md: 2, xl: 3 }} spacing={10} mt="1rem">
+            <SimpleGrid columns={{ base: 1, md: 2 }} spacing={10} mt="1rem">
                 {
                     techs.map(tech => (
                         <TechCard data={tech} key={tech.id} />
