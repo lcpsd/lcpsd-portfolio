@@ -22,8 +22,6 @@ const CustomLink = styled.span<CustomLinkProps>`
 
         position: relative;
 
-        font-size: medium;
-
         cursor: pointer;
 
         ::after{

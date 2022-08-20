@@ -1,5 +1,6 @@
 import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import { IoIosArrowForward } from "react-icons/io";
+import { Section } from "../CurrentSection";
 import { Header } from "../Header";
 import { HeaderTitle } from "../HeaderTitle";
 import { Profile } from "../Profile";
@@ -8,9 +9,7 @@ import { VideoBg } from "../videoBg";
 export function HeaderSection() {
 
     return (
-        <Box>
-            <Header />
-
+        <Section id="header">
             <Flex height={{ base: "100vh", md: "calc(100vh + 80px)" }} direction={{ base: "column", md: "row" }} w="100%">
                 <HeaderTitle flex="1" />
 
@@ -54,6 +53,6 @@ export function HeaderSection() {
             >
                 <VideoBg source='https://i.imgur.com/HoH9j5S.mp4' />
             </Flex>
-        </Box>
+        </Section>
     )
 }

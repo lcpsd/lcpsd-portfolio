@@ -3,6 +3,7 @@ import type { NextPage } from 'next'
 import { BigLight } from '../components/BigLight'
 import { CurrentSection } from '../components/CurrentSection'
 import { DefaultDivider } from '../components/DefaultDivider'
+import { Header } from '../components/Header'
 import { CertificationSection } from '../components/Sections/CertificationsSection'
 import { FormSection } from '../components/Sections/FormSection'
 import { HeaderSection } from '../components/Sections/HeaderSection'
@@ -15,6 +16,7 @@ const Home: NextPage = () => {
     <Box
       position="relative"
     >
+      <Header />
       <CurrentSection />
       <Flex
         direction="column"

@@ -5,7 +5,7 @@ import { DefaultLink } from "./DefaultLink";
 export function MenuLinks() {
 
     return (
-        <Flex w="100%" fontSize={{ base: "3xl", md: "xl" }} gap={20} direction={{ base: "column", md: "row" }} justify="center" align="center">
+        <Flex w="100%" fontSize={{ base: "3xl", md: "xl" }} gap={{ base: 20, md: 10, lg: 20 }} direction={{ base: "column", md: "row" }} justify="center" align="center">
             <Text fontWeight="semibold" mr={{ base: "initial", md: "auto" }} color="primary" >Lucas Cardoso</Text>
 
             <ActiveLink
