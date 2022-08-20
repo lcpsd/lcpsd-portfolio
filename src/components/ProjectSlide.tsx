@@ -1,7 +1,7 @@
 import { Box, Flex, SimpleGrid, Text, Icon, Button } from "@chakra-ui/react";
 import { FiGithub } from "react-icons/fi";
 import { DefaultLink } from "./DefaultLink";
-import { ProjectBadge } from "./ProjectBadge";
+import { ProjectBadge } from "./TechBadge";
 import { ProjectImage } from "./ProjectImage";
 
 interface TechProps {
