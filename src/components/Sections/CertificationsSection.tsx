@@ -22,7 +22,7 @@ export function CertificationSection() {
     ]
 
     return (
-        <Container h={{ base: "70vh", lg: "100vh" }}>
+        <Container h={{ base: "70vh", md: "100vh" }}>
             <DefaultTitle title="Certificações" />
             <DefaultCarousel>
                 {
@@ -31,8 +31,8 @@ export function CertificationSection() {
                             <Flex w="100%" h="100%" align="center" justify="center">
                                 <Img
                                     src={certification.imgLink}
-                                    h={{ base: "auto", lg: "80%" }}
-                                    w={{ base: "100%", lg: "auto" }}
+                                    h={{ base: "auto", md: "80%" }}
+                                    w={{ base: "100%", md: "auto" }}
                                     bgPos="center"
                                     bgSize="cover"
                                     borderRadius="xl"

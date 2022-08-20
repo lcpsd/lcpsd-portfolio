@@ -26,7 +26,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
 
     return (
         <Flex
-            w={{ base: "100%", md: "500px", xl: "100%" }}
+            w={{ base: "100%", md: "90vw", xl: "100%" }}
             mx="auto"
             minH="100vh"
             h="100%"
@@ -56,34 +56,38 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                 </Flex>
             </DefaultLink>
 
-            <Flex flex="1" direction="column" gap={5} justify="center" h="100%">
-                <Box>
+            <Flex flex="1" direction={{ base: "column", md: "row", lg: "column" }} gap={5} justify="center">
+                <Box flex="1">
                     <Text color="primary" fontSize="2xl">{project.title}</Text>
                     <Text>{project.description}</Text>
                 </Box>
 
-                <SimpleGrid columns={2} spacing={5}>
-                    {
-                        project.techs.map(tech => (
-                            <ProjectBadge
-                                logoUrl={tech.logo}
-                                title={tech.title}
-                                key={tech.title}
-                            />
-                        ))
-                    }
-                </SimpleGrid>
+                <Flex direction="column" flex="1" gap={5}>
+                    <SimpleGrid columns={2} spacing={5}>
+                        {
+                            project.techs.map(tech => (
+                                <ProjectBadge
+                                    logoUrl={tech.logo}
+                                    title={tech.title}
+                                    key={tech.title}
+                                />
+                            ))
+                        }
+                    </SimpleGrid>
 
-                <DefaultLink url={project.url}>
-                    <Button
-                        background="quinary"
-                        color="white"
-                        colorScheme="black"
-                        gap={2}
-                        marginBottom="4em"
-                        w="100%"
-                    >Repositório <Icon as={FiGithub} /></Button>
-                </DefaultLink>
+                    <DefaultLink url={project.url}>
+                        <Button
+                            background="quinary"
+                            color="white"
+                            colorScheme="black"
+                            gap={2}
+                            marginBottom="4em"
+                            w="100%"
+                            border="1px"
+                            borderColor="primary"
+                        >Repositório <Icon as={FiGithub} /></Button>
+                    </DefaultLink>
+                </Flex>
             </Flex>
         </Flex>
     )
