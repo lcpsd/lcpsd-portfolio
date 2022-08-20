@@ -66,7 +66,7 @@ export function ProjectSlide({ project }: ProjectSlideProps) {
                     <Text>{project.description}</Text>
                 </Box>
 
-                <Flex direction="column" flex="1" gap={5} justify="center" w="100%">
+                <Flex direction="column" flex="1" gap={5} justify="flex-start" w="100%" >
                     <SimpleGrid columns={{ base: 2, lg: 3 }} spacing={5} display={{ base: "none", md: "grid" }} w="100%">
                         {
                             project.techs.map(tech => (
