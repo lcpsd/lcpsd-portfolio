@@ -39,23 +39,6 @@ const Home: NextPage = () => {
 
         <FormSection />
 
-        <BigLight
-          top="-20rem"
-          m="auto"
-          left="-120rem"
-        />
-
-        <BigLight
-          top="20rem"
-          left="-20rem"
-          m="auto"
-          opacity="0.5"
-        />
-
-        <BigLight
-          top={{ sm: "200rem", lg: "80rem" }}
-          left={{ sm: "-30rem", lg: "-50rem" }}
-        />
       </Flex >
     </Box>
   )

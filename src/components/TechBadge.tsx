@@ -10,10 +10,9 @@ export function ProjectBadge({ title, logoUrl, ...rest }: ProjectBadgeProps) {
     return (
         <Flex
             align="center"
-            rounded="md"
             h="70px"
             p={2}
-            bg="quinary"
+            bg="#161325"
             borderBottom="1px"
             borderColor="primary"
             {...rest}

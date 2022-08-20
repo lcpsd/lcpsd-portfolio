@@ -15,11 +15,10 @@ export function TechCard({ data: { id, logoUrl, description } }: TechCardProps) 
             h="100%"
             w="100%"
             p={5}
-            bg="quinary"
+            bg="#161325"
             border="1px"
             borderColor="transparent"
             borderBottomColor="primary"
-            rounded="md"
             gap={5}
         >
             <Flex flex="1" align="center" justify="center">
