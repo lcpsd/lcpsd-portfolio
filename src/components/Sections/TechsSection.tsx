@@ -71,7 +71,7 @@ export function TechSection() {
     ]
 
     return (
-        <Section h="100%" minH="100vh" id="techs">
+        <Section id="techs" h="100%">
 
             <DefaultTitle title='Tecnologias' />
 

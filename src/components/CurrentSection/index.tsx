@@ -17,8 +17,6 @@ export function CurrentSection() {
     useEffect(() => {
         const allSections: NodeListOf<HTMLElement> = document.querySelectorAll('.current-section-node')
 
-        console.log(allSections)
-
         window.onscroll = () => {
 
             allSections.forEach(section => {
@@ -28,13 +26,11 @@ export function CurrentSection() {
                 const windowOffsetTop = window.scrollY + 200
 
                 if (sectionOffsetBottom >= windowOffsetTop && sectionOffsetTop <= windowOffsetTop) {
-                    if (currentSection !== section.id && section.id) {
-                        setCurrentSection(section.id)
-                    }
+                    currentSection !== section.id && section.id && setCurrentSection(section.id)
                 }
             })
         }
-    }, [])
+    })
 
     return (<></>)
 }

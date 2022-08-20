@@ -21,7 +21,7 @@ export function MenuLinks() {
             </ActiveLink>
 
             <ActiveLink
-                href="certifications"
+                href="#certifications"
             >
                 <Text>Certificações</Text>
             </ActiveLink>
