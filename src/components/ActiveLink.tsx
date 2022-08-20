@@ -18,7 +18,7 @@ interface CustomLinkProps {
 const CustomLink = styled.span<CustomLinkProps>`
     .menuLink{
 
-        color: ${(props: any) => props.isActive ? theme.colors.blue['500'] : theme.colors.gray['600']};
+        color: ${theme.colors?.white};
 
         position: relative;
 
@@ -33,7 +33,7 @@ const CustomLink = styled.span<CustomLinkProps>`
             left: -20%;
             bottom: -10px;
 
-            background: ${theme.colors.blue['500']};
+            background: ${theme.colors?.primary};
         }
     }
 `

@@ -4,11 +4,14 @@ import { useMenuContext } from '../contexts/MenuContext'
 import { motion } from 'framer-motion'
 import { useIsMedium } from '../hooks/useMediaQuery'
 import { MenuLinks } from './MenuLinks'
+import { useEffect, useState } from 'react'
 
 export function Header() {
 
     const { openMenu, setOpenMenu } = useMenuContext()
     const isXLarge = useIsMedium()
+
+    const [isBlurry, setIsBlurry] = useState(false)
 
     const variants = !isXLarge ? {
         visible: { opacity: 1, left: "0rem", zIndex: 10, transition: { ease: "easeIn", duration: 0.3 } },
@@ -18,19 +21,35 @@ export function Header() {
         hidden: { opacity: 1 },
     }
 
+    useEffect(() => {
+        window.onscroll = () => {
+            var scroll = window.pageYOffset;
+            if (scroll > window.innerHeight) {
+                setIsBlurry(true)
+            }
+
+            if (scroll < window.innerHeight) {
+                setIsBlurry(false)
+            }
+        }
+    }, [])
+
     return (
         <Box
-            position="absolute"
+            position="fixed"
             top="0"
             left="0"
             zIndex="1000"
             w="100%"
+            backdropFilter={`blur(20px) opacity(${isBlurry ? 1 : 0})`}
+            bg={isBlurry ? "#00032112" : "transparent"}
+            transition="all 0.2s"
         >
             <Flex
                 maxW="1200px"
                 w={{ base: "100%", md: "initial" }}
                 m="0 auto"
-                h={{ base: "100vh", md: "120px" }}
+                h={{ base: "100vh", md: "80px" }}
                 align="center"
                 justify={{ base: "center", md: "space-between" }}
                 p="20px"
