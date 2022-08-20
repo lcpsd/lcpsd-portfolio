@@ -4,6 +4,7 @@ import { Section } from "../CurrentSection";
 import { Header } from "../Header";
 import { HeaderTitle } from "../HeaderTitle";
 import { Profile } from "../Profile";
+import { ScrollDownText } from "../ScrollDownText";
 import { VideoBg } from "../videoBg";
 
 export function HeaderSection() {
@@ -29,19 +30,7 @@ export function HeaderSection() {
                 </Flex>
             </Flex>
 
-            <Flex
-                transform="rotate(90deg)"
-                position="absolute"
-                right="0"
-                zIndex="100"
-                align="center"
-                justify="center"
-                opacity="0.3"
-                color="primary"
-            >
-                <Text fontSize="1.5rem">Role</Text>
-                <Icon as={IoIosArrowForward} fontSize="3xl" />
-            </Flex>
+            <ScrollDownText />
 
             <Flex
                 position="absolute"
