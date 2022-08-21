@@ -1,11 +1,8 @@
 import { Box, Flex, Img, Text } from "@chakra-ui/react";
+import { Tech } from "../models";
 
 interface TechCardProps {
-    data: {
-        id: string | number;
-        logoUrl: string;
-        description: string;
-    }
+    data: Tech;
 }
 
 export function TechCard({ data: { id, logoUrl, description } }: TechCardProps) {
@@ -23,7 +20,7 @@ export function TechCard({ data: { id, logoUrl, description } }: TechCardProps) 
         >
             <Flex flex="1" align="center" justify="center">
                 <Img
-                    src={logoUrl}
+                    src={logoUrl ?? ""}
                     h="auto"
                     w="100%"
                     maxH="100px"

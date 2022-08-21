@@ -1,3 +1,9 @@
+type Tech @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  logoUrl: String
+  description: String
+}
+
 type Profile @model @auth(rules: [{allow: public, operations: [read]}]) {
   id: ID!
   avatarUrl: String

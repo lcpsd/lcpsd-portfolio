@@ -4,8 +4,22 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
+type TechMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type ProfileMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+export declare class Tech {
+  readonly id: string;
+  readonly logoUrl?: string | null;
+  readonly description?: string | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Tech, TechMetaData>);
+  static copyOf(source: Tech, mutator: (draft: MutableModel<Tech, TechMetaData>) => MutableModel<Tech, TechMetaData> | void): Tech;
 }
 
 export declare class Profile {
