@@ -12,7 +12,12 @@ export function TechSection() {
 
     async function FetchTechs() {
         const data = await DataStore.query<Tech>(Tech)
-        setTechData(data)
+
+        if (data[0]) {
+            //@ts-ignore
+            const sorted = data.sort((a: Tech, b: Tech) => a.order - b.order)
+            setTechData(sorted)
+        }
     }
 
     useEffect(() => {

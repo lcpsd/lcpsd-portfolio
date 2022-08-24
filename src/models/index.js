@@ -4,9 +4,13 @@ import { schema } from './schema';
 
 
 
-const { Tech, Profile } = initSchema(schema);
+const { ProjectScreenshot, Project, ProjectTech, Tech, Profile, ProjectProjectScreenshot } = initSchema(schema);
 
 export {
+  ProjectScreenshot,
+  Project,
+  ProjectTech,
   Tech,
-  Profile
+  Profile,
+  ProjectProjectScreenshot
 };

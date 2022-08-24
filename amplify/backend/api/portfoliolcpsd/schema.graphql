@@ -1,7 +1,35 @@
+type ProjectScreenshot @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  url: String
+  ProjectName: String
+  order: Int
+  projects: [Project] @manyToMany(relationName: "ProjectProjectScreenshot")
+}
+
+type ProjectTech @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  logoUrl: String
+  projectID: ID! @index(name: "byProject")
+  ProjectName: String
+}
+
+type Project @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  description: String
+  url: String
+  ProjectTechs: [ProjectTech] @hasMany(indexName: "byProject", fields: ["id"])
+  ProjectScreenshots: [ProjectScreenshot] @manyToMany(relationName: "ProjectProjectScreenshot")
+  order: Int
+}
+
 type Tech @model @auth(rules: [{allow: public}]) {
   id: ID!
-  logoUrl: String
+  title: String
   description: String
+  order: Int
+  logoUrl: String
 }
 
 type Profile @model @auth(rules: [{allow: public, operations: [read]}]) {
