@@ -6,8 +6,15 @@ import { DefaultTitle } from "../DefaultTitle";
 import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { Section } from "../CurrentSection";
+import { DataStore } from "aws-amplify";
+import { Budge, Profile } from "../../models";
+import { maskPhone } from "../../utils/maskPhone";
+import { ChangeEvent, useEffect, useState } from "react";
+import { DefaultLink } from "../DefaultLink";
 
 export function FormSection() {
+
+    const [profileData, setProfileData] = useState<Profile>()
 
     // Yup
     const schema = yup.object().shape({
@@ -26,8 +33,18 @@ export function FormSection() {
     })
 
     async function handleSubmitForm(formData: FieldValues) {
-        console.log(formData)
+        await DataStore.save(new Budge({ ...formData }))
     }
+
+
+    async function FetchUserProfile() {
+        const data = await DataStore.query<Profile>(Profile)
+        setProfileData(data[0])
+    }
+
+    useEffect(() => {
+        FetchUserProfile()
+    }, [])
 
 
     return (
@@ -54,6 +71,9 @@ export function FormSection() {
                     registerName='whatsapp'
                     formRegister={register}
                     placeholder='Whatsapp'
+                    onChange={(e: ChangeEvent<HTMLInputElement>) => {
+                        e.target.value = maskPhone(e.target.value)
+                    }}
                 />
                 <Text className="error-message">{errors.whatsapp?.message?.toString()}</Text>
 
@@ -106,7 +126,9 @@ export function FormSection() {
 
             <Flex direction="column" mt="2rem" w="100%">
                 <Text>Ou tire suas dúvidas pelo whatsapp</Text>
-                <Button bg="tertiary" colorScheme="purple" color="white">Whatsapp</Button>
+                <DefaultLink url={`https://api.whatsapp.com/send?phone=55${profileData?.whatsapp}`}>
+                    <Button bg="tertiary" colorScheme="purple" color="white" w="100%">Whatsapp</Button>
+                </DefaultLink>
             </Flex>
         </Section>
     )

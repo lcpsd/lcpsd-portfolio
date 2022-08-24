@@ -29,8 +29,8 @@ export function ProjectsSection() {
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
                 {
                     projectData &&
-                    projectData.map(project => (
-                        <ProjectCard project={project} />
+                    projectData.map((project: Project) => (
+                        <ProjectCard project={project} key={project.id} />
                     ))
                 }
             </SimpleGrid>

@@ -21,12 +21,7 @@ export function HeaderSection() {
                     justify={{ base: "flex-start", md: "center" }}
                     gap={10}
                     position="relative">
-                    <Profile
-                        profileUrl='images/profile-picture.jpeg'
-                        githubUrl="https://github.com/lcpsd"
-                        linkedinUrl="https://www.linkedin.com/in/lcpsd/"
-                        location='Campo Grande - MS'
-                    />
+                    <Profile />
                 </Flex>
             </Flex>
 

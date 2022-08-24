@@ -10,8 +10,8 @@ interface DefaultLink extends ChakraStyledOptions {
 export function DefaultLink({ url, children, ...rest }: DefaultLink) {
 
     return (
-        <Link href={url} passHref>
-            <ChakraLink target="_blank" {...rest}>
+        <Link href={url} passHref style={{ width: "100%" }}>
+            <ChakraLink target="_blank" {...rest} w="100%">
                 {children}
             </ChakraLink>
         </Link>
