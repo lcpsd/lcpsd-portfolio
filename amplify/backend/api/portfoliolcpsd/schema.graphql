@@ -1,3 +1,10 @@
+type Certification @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  imageUrl: String
+  title: String
+  order: Int
+}
+
 type Project @model @auth(rules: [{allow: public}]) {
   id: ID!
   title: String

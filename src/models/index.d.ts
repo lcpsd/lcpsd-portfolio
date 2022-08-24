@@ -4,6 +4,10 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
+type CertificationMetaData = {
+  readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
 type ProjectMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
 }
@@ -14,6 +18,17 @@ type TechMetaData = {
 
 type ProfileMetaData = {
   readOnlyFields: 'createdAt' | 'updatedAt';
+}
+
+export declare class Certification {
+  readonly id: string;
+  readonly imageUrl?: string | null;
+  readonly title?: string | null;
+  readonly order?: number | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+  constructor(init: ModelInit<Certification, CertificationMetaData>);
+  static copyOf(source: Certification, mutator: (draft: MutableModel<Certification, CertificationMetaData>) => MutableModel<Certification, CertificationMetaData> | void): Certification;
 }
 
 export declare class Project {
