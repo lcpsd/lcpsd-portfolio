@@ -1,82 +1,58 @@
-import { SwiperSlide } from "swiper/react";
-import { Container } from "../Container";
+import { Box, Button, Flex, Icon, Img, SimpleGrid, Text } from "@chakra-ui/react";
+import { DataStore } from "aws-amplify";
+import Image from "next/image";
+import { useEffect, useState } from "react";
+import { FiGithub } from "react-icons/fi";
+import { Project } from "../../models";
 import { Section } from "../CurrentSection";
-import { DefaultCarousel } from "../DefaultCarousel";
+import { DefaultLink } from "../DefaultLink";
 import { DefaultTitle } from "../DefaultTitle";
-import { ProjectSlide } from "../ProjectSlide";
 
 export function ProjectsSection() {
 
-    const projects = [
-        {
-            id: 1,
-            title: "Nome Projeto",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat earum enim rem, qui illo quisquam sequi suscipit, vero veniam eius, iste excepturi at harum quaerat accusamus officiis a voluptatum sint.",
-            url: "http://google.com",
-            techs: [
-                {
-                    logo: "https://i.imgur.com/eCD0M12.png",
-                    title: "tech"
-                },
-                {
-                    logo: "https://i.imgur.com/eCD0M12.png",
-                    title: "tech"
-                },
-                {
-                    logo: "https://i.imgur.com/eCD0M12.png",
-                    title: "tech"
-                }
-            ],
-            screenshots: [
-                "https://i.imgur.com/hhQnIUl.png",
-                "https://i.imgur.com/hhQnIUl.png"
-            ]
-        },
+    const [projectData, setProjectdata] = useState<Project[]>()
 
-        {
-            id: 2,
-            title: "Nome Projeto",
-            description: "Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugiat earum enim rem, qui illo quisquam sequi suscipit, vero veniam eius, iste excepturi at harum quaerat accusamus officiis a voluptatum sint.",
-            url: "google.com",
-            techs: [
-                {
-                    logo: "https://i.imgur.com/eCD0M12.png",
-                    title: "tech"
-                },
-                {
-                    logo: "https://i.imgur.com/eCD0M12.png",
-                    title: "tech"
-                },
-                {
-                    logo: "https://i.imgur.com/eCD0M12.png",
-                    title: "tech"
-                }
-            ],
-            screenshots: [
-                "https://i.imgur.com/hhQnIUl.png",
-                "https://i.imgur.com/hhQnIUl.png"
-            ]
-        }
-    ]
+    async function fetchTechs() {
+        const data = await DataStore.query<Project>(Project)
+
+        setProjectdata(data)
+    }
+
+    useEffect(() => {
+        fetchTechs()
+    }, [])
 
     return (
-        <Section h="100vh" id="projects">
+        <Section minH="100vh" id="projects" gap={10}>
             <DefaultTitle title="Projetos" lineHeight="0" />
-            <DefaultCarousel>
+            <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
                 {
-                    projects.map(project => (
-                        <SwiperSlide
-                            key={project.id}
-                            style={{
-                                width: "100%",
-                                height: "100%",
-                            }}
-                        >
-                            <ProjectSlide project={project} key={project.id} />
-                        </SwiperSlide>
+                    projectData &&
+                    projectData.map(project => (
+                        <Flex direction="column" minH="300px" p={5} border="1px" borderColor="quaternary" rounded="md" gap={5}>
+                            <Flex align="center" flex="1">
+                                <Img
+                                    src={project.screenshot ?? ""}
+                                    rounded="md"
+                                />
+                            </Flex>
+                            <Flex flex="1" direction="column">
+                                <Text fontWeight="bold" color="primary" fontSize="xl">
+                                    {project.title}
+                                </Text>
+                                <Text>
+                                    {project.description}
+                                </Text>
+                            </Flex>
+                            <DefaultLink url={project.url ?? ""}>
+                                <Button colorScheme="black" w="100%" border="1px" borderColor="quaternary">
+                                    Repositório <Icon as={FiGithub} />
+                                </Button>
+                            </DefaultLink>
+                        </Flex>
                     ))
                 }
-            </DefaultCarousel>
+            </SimpleGrid>
         </Section>
     )
 }
