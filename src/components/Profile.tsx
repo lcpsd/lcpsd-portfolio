@@ -22,7 +22,7 @@ export function Profile() {
 
     return (
         <Box>
-            <ProfilePicture pictureUrl='images/profile-picture.jpeg' />
+            <ProfilePicture pictureUrl={profileData?.avatarUrl ?? ""} />
 
             <Flex w="100%" justify="center" py={5} gap={5}>
                 <Link href={profileData?.github ?? ""}>

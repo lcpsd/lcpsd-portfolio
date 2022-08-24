@@ -11,7 +11,7 @@ export function HeaderSection() {
 
     return (
         <Section id="header">
-            <Flex height="100vh" direction={{ base: "column", md: "row" }} w="100%" pt={{ md: "3rem" }}>
+            <Flex height="100vh" direction={{ base: "column", md: "row" }} w="100%" pt={{ md: "5rem" }}>
                 <HeaderTitle flex="1" />
 
                 <Flex
