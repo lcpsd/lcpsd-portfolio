@@ -2,7 +2,7 @@ import { Box, ChakraStyledOptions } from "@chakra-ui/react";
 
 interface BigLightProps extends ChakraStyledOptions { }
 
-export function BigLight({ ...rest }) {
+export function BigLight({ ...rest }:BigLightProps) {
 
 
     return (
