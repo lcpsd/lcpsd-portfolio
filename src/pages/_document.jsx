@@ -23,10 +23,12 @@ export default class MyDocument extends Document {
         ),
         render: (
           <Html>
+            <title>Lucas Cardoso Dev</title>
             <Head>
               <link rel="preconnect" href="https://fonts.googleapis.com" />
               <link rel="preconnect" href="https://fonts.gstatic.com" />
               <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700" rel="stylesheet" />
+              <meta name="description" content="Desenvolvedor Front-end JamStack Jr | ReactJs | Next.js | Typescript" />
             </Head>
             <body>
               <Main />

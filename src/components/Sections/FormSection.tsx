@@ -96,13 +96,15 @@ export function FormSection() {
                     registerName='ref1'
                     formRegister={register}
                     placeholder='Referência 1'
+                    type="url"
                 />
                 <Text className="error-message">{errors.ref1?.message?.toString()}</Text>
 
                 <DefaultField
                     registerName='ref2'
                     formRegister={register}
-                    placeholder='Referência 1'
+                    placeholder='Referência 2'
+                    type="url"
                 />
                 <Text className="error-message">{errors.ref2?.message?.toString()}</Text>
 
