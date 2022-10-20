@@ -24,7 +24,7 @@ export function ProjectsSection() {
     }, [])
 
     return (
-        <Section minH="100vh" id="projects" gap={10}>
+        <Section minH="100vh" h="100%" id="projects" gap={10}>
             <DefaultTitle title="Projetos" lineHeight="0" />
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
                 {
