@@ -128,7 +128,7 @@ export function FormSection() {
 
             <Flex direction="column" mt="2rem" w="100%">
                 <Text>Ou tire suas dúvidas pelo whatsapp</Text>
-                <DefaultLink url={`https://api.whatsapp.com/send?phone=55${profileData?.whatsapp}`}>
+                <DefaultLink url={`https://api.whatsapp.com/send?phone=${profileData?.whatsapp}`}>
                     <Button bg="tertiary" colorScheme="purple" color="white" w="100%">Whatsapp</Button>
                 </DefaultLink>
             </Flex>
