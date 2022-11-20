@@ -39,9 +39,9 @@ const Home: NextPage = () => {
 
         <CertificationSection />
 
-        <DefaultDivider />
+        {/* <DefaultDivider /> */}
 
-        <FormSection />
+        {/* <FormSection /> */}
 
       </Flex >
     </Box>

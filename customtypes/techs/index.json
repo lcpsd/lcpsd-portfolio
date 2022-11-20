@@ -1,0 +1,39 @@
+{
+  "id": "techs",
+  "label": "Techs",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "title": {
+        "type": "Text",
+        "config": {
+          "label": "title",
+          "placeholder": ""
+        }
+      },
+      "description": {
+        "type": "Text",
+        "config": {
+          "label": "description",
+          "placeholder": ""
+        }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "order",
+          "placeholder": ""
+        }
+      },
+      "logourl": {
+        "type": "Link",
+        "config": {
+          "label": "logoUrl",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}
