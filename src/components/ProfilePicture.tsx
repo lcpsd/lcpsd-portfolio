@@ -13,7 +13,7 @@ export function ProfilePicture({ pictureUrl, ...rest }: ProfilePicture) {
 
     const variants = {
         start: { boxShadow: "0px 0px 50px -20px #00FFD1" },
-        finish: { boxShadow: "0px 0px 300px 0px #00FFD1" }
+        finish: { boxShadow: "0px 0px 100px 0px #00FFD1" }
     }
 
     return (
