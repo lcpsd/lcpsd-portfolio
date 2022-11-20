@@ -1,23 +1,16 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { DataStore } from "aws-amplify";
 import { useEffect, useState } from "react";
-import { Tech } from "../../models";
 import { Section } from "../CurrentSection";
 import { DefaultTitle } from "../DefaultTitle";
 import { TechCard } from "../TechCard";
 
 export function TechSection() {
 
-    const [techData, setTechData] = useState<Tech[]>()
+    const [techData, setTechData] = useState()
 
     async function FetchTechs() {
-        const data = await DataStore.query<Tech>(Tech)
-
-        if (data[0]) {
-            //@ts-ignore
-            const sorted = data.sort((a: Tech, b: Tech) => a.order - b.order)
-            setTechData(sorted)
-        }
+        return
     }
 
     useEffect(() => {

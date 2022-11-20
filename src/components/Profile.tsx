@@ -4,16 +4,24 @@ import { FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
 import { FloatingIcon } from "./FloatingIcon";
 import { ProfilePicture } from "./ProfilePicture";
 import { DataStore } from '@aws-amplify/datastore';
-import { Profile as ProfileModel } from '../models';
 import { useEffect, useState } from "react";
+import { client } from "../services/primisc";
 
 export function Profile() {
 
-    const [profileData, setProfileData] = useState<ProfileModel>()
+    const [profileData, setProfileData] = useState<any>()
 
     async function FetchUserProfile() {
-        const data = await DataStore.query<ProfileModel>(ProfileModel)
-        setProfileData(data[0])
+        const { data } = await client.getSingle('profile')
+        const sanitized = {
+            name: data.name,
+            whatsapp: data.whatsapp,
+            location: data.location,
+            avatarUrl: data.avatarurl.url,
+            github: data.github.url,
+            linkedIn: data.linkedin.url
+        }
+        setProfileData(sanitized)
     }
 
     useEffect(() => {

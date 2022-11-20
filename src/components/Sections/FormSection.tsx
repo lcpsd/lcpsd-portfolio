@@ -7,14 +7,13 @@ import { yupResolver } from '@hookform/resolvers/yup'
 import * as yup from 'yup'
 import { Section } from "../CurrentSection";
 import { DataStore } from "aws-amplify";
-import { Budge, Profile } from "../../models";
 import { maskPhone } from "../../utils/maskPhone";
 import { ChangeEvent, useEffect, useState } from "react";
 import { DefaultLink } from "../DefaultLink";
 
 export function FormSection() {
 
-    const [profileData, setProfileData] = useState<Profile>()
+    const [profileData, setProfileData] = useState<any>()
 
     // Yup
     const schema = yup.object().shape({
@@ -33,13 +32,12 @@ export function FormSection() {
     })
 
     async function handleSubmitForm(formData: FieldValues) {
-        await DataStore.save(new Budge({ ...formData }))
+        return
     }
 
 
     async function FetchUserProfile() {
-        const data = await DataStore.query<Profile>(Profile)
-        setProfileData(data[0])
+        return
     }
 
     useEffect(() => {

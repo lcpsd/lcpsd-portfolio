@@ -3,7 +3,6 @@ import { DataStore } from "aws-amplify";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FiGithub } from "react-icons/fi";
-import { Project } from "../../models";
 import { Section } from "../CurrentSection";
 import { DefaultLink } from "../DefaultLink";
 import { DefaultTitle } from "../DefaultTitle";
@@ -11,12 +10,10 @@ import { ProjectCard } from "../ProjectCard";
 
 export function ProjectsSection() {
 
-    const [projectData, setProjectdata] = useState<Project[]>()
+    const [projectData, setProjectdata] = useState<any[]>()
 
     async function fetchTechs() {
-        const data = await DataStore.query<Project>(Project)
-
-        setProjectdata(data)
+        return
     }
 
     useEffect(() => {
@@ -29,7 +26,7 @@ export function ProjectsSection() {
             <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} spacing={10}>
                 {
                     projectData &&
-                    projectData.map((project: Project) => (
+                    projectData.map((project) => (
                         <ProjectCard project={project} key={project.id} />
                     ))
                 }

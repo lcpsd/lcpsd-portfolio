@@ -1,8 +1,6 @@
 import { Flex, Img } from "@chakra-ui/react";
-import { DataStore } from "aws-amplify";
 import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
-import { Certification } from "../../models";
 import { Container } from "../Container";
 import { Section } from "../CurrentSection";
 import { DefaultCarousel } from "../DefaultCarousel";
@@ -10,15 +8,10 @@ import { DefaultTitle } from "../DefaultTitle";
 
 export function CertificationSection() {
 
-    const [certifications, setCertifications] = useState<Certification[]>([])
+    const [certifications, setCertifications] = useState<any[]>([])
 
     async function fetchCertifications() {
-        const data = await DataStore.query<Certification>(Certification)
-
-        if (data) {
-            //@ts-ignore
-            setCertifications(data.sort((a, b) => a.order - b.order))
-        }
+        return
     }
 
     useEffect(() => {
