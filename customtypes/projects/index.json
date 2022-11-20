@@ -27,20 +27,19 @@
           "select": null
         }
       },
-      "order": {
-        "type": "Link",
-        "config": {
-          "label": "Order",
-          "placeholder": "",
-          "select": null
-        }
-      },
       "screenshot": {
         "type": "Link",
         "config": {
           "label": "Screenshot",
           "placeholder": "",
           "select": null
+        }
+      },
+      "order": {
+        "type": "Number",
+        "config": {
+          "label": "Order",
+          "placeholder": ""
         }
       }
     }

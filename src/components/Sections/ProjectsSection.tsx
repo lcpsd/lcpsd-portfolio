@@ -3,6 +3,7 @@ import { DataStore } from "aws-amplify";
 import Image from "next/image";
 import { useEffect, useState } from "react";
 import { FiGithub } from "react-icons/fi";
+import { client } from "../../services/primisc";
 import { Section } from "../CurrentSection";
 import { DefaultLink } from "../DefaultLink";
 import { DefaultTitle } from "../DefaultTitle";
@@ -13,7 +14,18 @@ export function ProjectsSection() {
     const [projectData, setProjectdata] = useState<any[]>()
 
     async function fetchTechs() {
-        return
+        const projects = await client.getAllByType('projects')
+
+        const sanitized = projects.map(project => {
+            return {
+                title: project.data.title,
+                description: project.data.description,
+                screenshot: project.data.screenshot.url,
+                order: project.data.order
+            }
+        })
+
+        setProjectdata(sanitized)
     }
 
     useEffect(() => {

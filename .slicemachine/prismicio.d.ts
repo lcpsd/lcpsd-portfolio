@@ -6,18 +6,6 @@ import type * as prismic from "@prismicio/client";
 type Simplify<T> = {
     [KeyType in keyof T]: T[KeyType];
 };
-/** Content for Budges documents */
-type BudgesDocumentData = Record<string, never>;
-/**
- * Budges document from Prismic
- *
- * - **API ID**: `budges`
- * - **Repeatable**: `true`
- * - **Documentation**: https://prismic.io/docs/core-concepts/custom-types
- *
- * @typeParam Lang - Language API ID of the document.
- */
-export type BudgesDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<BudgesDocumentData>, "budges", Lang>;
 /** Content for Certifications documents */
 interface CertificationsDocumentData {
     /**
@@ -179,17 +167,6 @@ interface ProjectsDocumentData {
      */
     url: prismicT.LinkField;
     /**
-     * Order field in *Projects*
-     *
-     * - **Field Type**: Link
-     * - **Placeholder**: *None*
-     * - **API ID Path**: projects.order
-     * - **Tab**: Main
-     * - **Documentation**: https://prismic.io/docs/core-concepts/link-content-relationship
-     *
-     */
-    order: prismicT.LinkField;
-    /**
      * Screenshot field in *Projects*
      *
      * - **Field Type**: Link
@@ -200,6 +177,17 @@ interface ProjectsDocumentData {
      *
      */
     screenshot: prismicT.LinkField;
+    /**
+     * Order field in *Projects*
+     *
+     * - **Field Type**: Number
+     * - **Placeholder**: *None*
+     * - **API ID Path**: projects.order
+     * - **Tab**: Main
+     * - **Documentation**: https://prismic.io/docs/core-concepts/number
+     *
+     */
+    order: prismicT.NumberField;
 }
 /**
  * Projects document from Prismic
@@ -268,12 +256,12 @@ interface TechsDocumentData {
  * @typeParam Lang - Language API ID of the document.
  */
 export type TechsDocument<Lang extends string = string> = prismicT.PrismicDocumentWithoutUID<Simplify<TechsDocumentData>, "techs", Lang>;
-export type AllDocumentTypes = BudgesDocument | CertificationsDocument | ProfileDocument | ProjectsDocument | TechsDocument;
+export type AllDocumentTypes = CertificationsDocument | ProfileDocument | ProjectsDocument | TechsDocument;
 declare module "@prismicio/client" {
     interface CreateClient {
         (repositoryNameOrEndpoint: string, options?: prismic.ClientConfig): prismic.Client<AllDocumentTypes>;
     }
     namespace Content {
-        export type { BudgesDocumentData, BudgesDocument, CertificationsDocumentData, CertificationsDocument, ProfileDocumentData, ProfileDocument, ProjectsDocumentData, ProjectsDocument, TechsDocumentData, TechsDocument, AllDocumentTypes };
+        export type { CertificationsDocumentData, CertificationsDocument, ProfileDocumentData, ProfileDocument, ProjectsDocumentData, ProjectsDocument, TechsDocumentData, TechsDocument, AllDocumentTypes };
     }
 }
