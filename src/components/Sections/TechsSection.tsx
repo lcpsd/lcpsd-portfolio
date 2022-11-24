@@ -1,16 +1,29 @@
 import { SimpleGrid } from "@chakra-ui/react";
-import { DataStore } from "aws-amplify";
 import { useEffect, useState } from "react";
+import { client } from "../../services/primisc";
 import { Section } from "../CurrentSection";
 import { DefaultTitle } from "../DefaultTitle";
 import { TechCard } from "../TechCard";
 
 export function TechSection() {
 
-    const [techData, setTechData] = useState()
+    const [techData, setTechData] = useState<any[]>()
 
     async function FetchTechs() {
-        return
+        const projects = await client.getAllByType('techs')
+
+        const sanitized = projects.map(project => {
+            return {
+                title: project.data.title,
+                description: project.data.description,
+                logoUrl: project.data.logourl.url,
+                order: project.data.order
+            }
+        })
+
+        const sorted = sanitized.sort((a, b) => a.order - b.order)
+
+        setTechData(sorted)
     }
 
     useEffect(() => {
