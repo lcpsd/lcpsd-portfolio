@@ -5,15 +5,24 @@ import { Section } from "../CurrentSection";
 import { DefaultTitle } from "../DefaultTitle";
 import { TechCard } from "../TechCard";
 
+interface TechProps {
+    id: Number | String;
+    title: String;
+    description: String;
+    logoUrl: String;
+    order: Number;
+}
+
 export function TechSection() {
 
-    const [techData, setTechData] = useState<any[]>()
+    const [techData, setTechData] = useState<TechProps[]>()
 
     async function FetchTechs() {
         const projects = await client.getAllByType('techs')
 
         const sanitized = projects.map(project => {
             return {
+                id: project.data.id,
                 title: project.data.title,
                 description: project.data.description,
                 logoUrl: project.data.logourl.url,
@@ -39,7 +48,7 @@ export function TechSection() {
                 {
                     techData &&
                     techData.map(tech => (
-                        <TechCard data={tech} key={tech.id + tech.logoUrl} />
+                        <TechCard data={tech} key={`${tech.id}` + tech.logoUrl} />
                     ))
                 }
             </SimpleGrid>
