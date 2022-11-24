@@ -1,24 +1,35 @@
 import { Flex, Img } from "@chakra-ui/react";
-import { DataStore } from "aws-amplify";
 import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
-import { Certification } from "../../models";
-import { Container } from "../Container";
+import { client } from "../../services/primisc";
 import { Section } from "../CurrentSection";
 import { DefaultCarousel } from "../DefaultCarousel";
 import { DefaultTitle } from "../DefaultTitle";
 
+interface CertificationProps {
+    id: number;
+    imageUrl: string;
+    title: string;
+    order: number;
+}
+
 export function CertificationSection() {
 
-    const [certifications, setCertifications] = useState<Certification[]>([])
+    const [certifications, setCertifications] = useState<CertificationProps[]>([])
 
     async function fetchCertifications() {
-        const data = await DataStore.query<Certification>(Certification)
+        const projects = await client.getAllByType('certifications')
 
-        if (data) {
-            //@ts-ignore
-            setCertifications(data.sort((a, b) => a.order - b.order))
-        }
+        const sanitized = projects.map(project => {
+            return {
+                id: project.data.id,
+                imageUrl: project.data.imageurl.url,
+                title: project.data.title,
+                order: project.data.order
+            }
+        })
+
+        setCertifications(sanitized.sort((a, b) => a.order - b.order))
     }
 
     useEffect(() => {
@@ -26,7 +37,7 @@ export function CertificationSection() {
     }, [])
 
     return (
-        <Section id="certifications" h={{ base: "70vh", md: "100vh" }}>
+        <Section id="certifications" h="100vh">
             <DefaultTitle title="Certificações" />
             <DefaultCarousel>
                 {

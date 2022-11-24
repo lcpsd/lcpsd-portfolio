@@ -1,8 +1,11 @@
-import { Box, Flex, Img, Text } from "@chakra-ui/react";
-import { Tech } from "../models";
+import { Flex, Img, Text } from "@chakra-ui/react";
 
 interface TechCardProps {
-    data: Tech;
+    data: {
+        id: number | string;
+        logoUrl: string;
+        description: string;
+    }
 }
 
 export function TechCard({ data: { id, logoUrl, description } }: TechCardProps) {

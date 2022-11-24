@@ -1,23 +1,29 @@
 import { SimpleGrid } from "@chakra-ui/react";
-import { DataStore } from "aws-amplify";
 import { useEffect, useState } from "react";
-import { Tech } from "../../models";
+import { client } from "../../services/primisc";
+import { TechProps } from "../../types/tech";
 import { Section } from "../CurrentSection";
 import { DefaultTitle } from "../DefaultTitle";
 import { TechCard } from "../TechCard";
 
 export function TechSection() {
 
-    const [techData, setTechData] = useState<Tech[]>()
+    const [techData, setTechData] = useState<TechProps[]>()
 
     async function FetchTechs() {
-        const data = await DataStore.query<Tech>(Tech)
+        const projects = await client.getAllByType('techs')
 
-        if (data[0]) {
-            //@ts-ignore
-            const sorted = data.sort((a: Tech, b: Tech) => a.order - b.order)
-            setTechData(sorted)
-        }
+        const sanitized = projects.map(project => {
+            return {
+                id: project.data.id,
+                title: project.data.title,
+                description: project.data.description,
+                logoUrl: project.data.logourl.url,
+                order: project.data.order
+            }
+        })
+
+        setTechData(sanitized.sort((a, b) => a.order - b.order))
     }
 
     useEffect(() => {
@@ -33,7 +39,7 @@ export function TechSection() {
                 {
                     techData &&
                     techData.map(tech => (
-                        <TechCard data={tech} key={tech.id + tech.logoUrl} />
+                        <TechCard data={tech} key={`${tech.id}` + tech.logoUrl} />
                     ))
                 }
             </SimpleGrid>
