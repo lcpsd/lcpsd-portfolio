@@ -1,9 +1,9 @@
 import { Button, Flex, Icon, Img, Text } from "@chakra-ui/react";
 import { FiGithub } from "react-icons/fi";
-import { Project } from "../models";
+import { ProjectProps } from "../types/project";
 import { DefaultLink } from "./DefaultLink";
 
-export function ProjectCard({ project }: { project: Project }) {
+export function ProjectCard({ project }: ProjectProps) {
 
     return (
         <Flex direction="column" minH="300px" p={5} border="1px" borderColor="quaternary" rounded="md" gap={5}>

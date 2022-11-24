@@ -13,7 +13,7 @@ export function ProjectsSection() {
 
     const [projectData, setProjectdata] = useState<any[]>()
 
-    async function fetchTechs() {
+    async function fetchProjects() {
         const projects = await client.getAllByType('projects')
 
         const sanitized = projects.map(project => {
@@ -21,7 +21,8 @@ export function ProjectsSection() {
                 title: project.data.title,
                 description: project.data.description,
                 screenshot: project.data.screenshot.url,
-                order: project.data.order
+                order: project.data.order,
+                url: project.data.url.url
             }
         })
 
@@ -29,7 +30,7 @@ export function ProjectsSection() {
     }
 
     useEffect(() => {
-        fetchTechs()
+        fetchProjects()
     }, [])
 
     return (
