@@ -1,17 +1,10 @@
 import { SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { client } from "../../services/primisc";
+import { TechProps } from "../../types/tech";
 import { Section } from "../CurrentSection";
 import { DefaultTitle } from "../DefaultTitle";
 import { TechCard } from "../TechCard";
-
-interface TechProps {
-    id: number | string;
-    title: string;
-    description: string;
-    logoUrl: string;
-    order: number;
-}
 
 export function TechSection() {
 
