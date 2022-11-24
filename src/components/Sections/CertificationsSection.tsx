@@ -37,7 +37,7 @@ export function CertificationSection() {
     }, [])
 
     return (
-        <Section id="certifications" h={{ base: "70vh", md: "100vh" }}>
+        <Section id="certifications" h="100vh">
             <DefaultTitle title="Certificações" />
             <DefaultCarousel>
                 {
