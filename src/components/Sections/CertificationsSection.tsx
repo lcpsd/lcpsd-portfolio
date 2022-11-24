@@ -1,17 +1,35 @@
 import { Flex, Img } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
-import { Container } from "../Container";
+import { client } from "../../services/primisc";
 import { Section } from "../CurrentSection";
 import { DefaultCarousel } from "../DefaultCarousel";
 import { DefaultTitle } from "../DefaultTitle";
 
+interface CertificationProps {
+    id: number;
+    imageUrl: string;
+    title: string;
+    order: number;
+}
+
 export function CertificationSection() {
 
-    const [certifications, setCertifications] = useState<any[]>([])
+    const [certifications, setCertifications] = useState<CertificationProps[]>([])
 
     async function fetchCertifications() {
-        return
+        const projects = await client.getAllByType('certifications')
+
+        const sanitized = projects.map(project => {
+            return {
+                id: project.data.id,
+                imageUrl: project.data.imageurl.url,
+                title: project.data.title,
+                order: project.data.order
+            }
+        })
+
+        setCertifications(sanitized.sort((a, b) => a.order - b.order))
     }
 
     useEffect(() => {

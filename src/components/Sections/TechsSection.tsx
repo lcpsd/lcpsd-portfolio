@@ -6,11 +6,11 @@ import { DefaultTitle } from "../DefaultTitle";
 import { TechCard } from "../TechCard";
 
 interface TechProps {
-    id: Number | String;
-    title: String;
-    description: String;
-    logoUrl: String;
-    order: Number;
+    id: number | string;
+    title: string;
+    description: string;
+    logoUrl: string;
+    order: number;
 }
 
 export function TechSection() {
@@ -30,9 +30,7 @@ export function TechSection() {
             }
         })
 
-        const sorted = sanitized.sort((a, b) => a.order - b.order)
-
-        setTechData(sorted)
+        setTechData(sanitized.sort((a, b) => a.order - b.order))
     }
 
     useEffect(() => {
