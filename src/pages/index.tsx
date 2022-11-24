@@ -4,6 +4,7 @@ import { BgNoise } from '../components/BgNoise'
 import { BigLight } from '../components/BigLight'
 import { CurrentSection } from '../components/CurrentSection'
 import { DefaultDivider } from '../components/DefaultDivider'
+import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { CertificationSection } from '../components/Sections/CertificationsSection'
 import { FormSection } from '../components/Sections/FormSection'
@@ -44,6 +45,8 @@ const Home: NextPage = () => {
         {/* <DefaultDivider /> */}
 
         {/* <FormSection /> */}
+
+        <Footer />
 
       </Flex >
     </Box>
