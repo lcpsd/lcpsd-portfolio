@@ -4,9 +4,9 @@ interface DefaultTitleProps extends ChakraStyledOptions {
     title: string;
 }
 
-export function DefaultTitle({ title }: DefaultTitleProps) {
+export function DefaultTitle({ title, ...rest }: DefaultTitleProps) {
 
     return (
-        <Text color="primary" fontSize="4xl">{title}</Text>
+        <Text color="primary" fontSize="4xl" {...rest}>{title}</Text>
     )
 }

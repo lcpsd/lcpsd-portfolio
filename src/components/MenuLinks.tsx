@@ -27,7 +27,7 @@ export function MenuLinks() {
             </ActiveLink>
 
             <ActiveLink
-                href='#form'
+                href='#contact'
             >
                 <Text>Contato</Text>
             </ActiveLink>

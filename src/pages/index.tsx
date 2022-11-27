@@ -7,6 +7,7 @@ import { DefaultDivider } from '../components/DefaultDivider'
 import { Footer } from '../components/Footer'
 import { Header } from '../components/Header'
 import { CertificationSection } from '../components/Sections/CertificationsSection'
+import { ContactSection } from '../components/Sections/ContactSection'
 import { FormSection } from '../components/Sections/FormSection'
 import { HeaderSection } from '../components/Sections/HeaderSection'
 import { ProjectsSection } from '../components/Sections/ProjectsSection'
@@ -45,7 +46,7 @@ const Home: NextPage = () => {
         {/* <DefaultDivider /> */}
 
         {/* <FormSection /> */}
-
+        <ContactSection />
         <Footer />
 
       </Flex >
