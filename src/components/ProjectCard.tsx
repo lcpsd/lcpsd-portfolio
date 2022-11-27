@@ -10,7 +10,7 @@ export function ProjectCard({ project }: ProjectProps) {
             <Flex align="center" flex="1">
                 <Img
                     src={project.screenshot ?? ""}
-                    rounded="md"
+                    rounded="xl"
                 />
             </Flex>
             <Flex flex="1" direction="column">
@@ -22,7 +22,7 @@ export function ProjectCard({ project }: ProjectProps) {
                 </Text>
             </Flex>
             <DefaultLink url={project.url ?? ""}>
-                <Button colorScheme="black" w="100%" border="1px" borderColor="quaternary">
+                <Button color="white" w="100%" border="1px" borderColor="quaternary">
                     Repositório <Icon as={FiGithub} />
                 </Button>
             </DefaultLink>

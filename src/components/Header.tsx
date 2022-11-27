@@ -1,10 +1,10 @@
-import { Box, Flex, Icon, Img, Text } from '@chakra-ui/react'
+import { Box, Button, Flex, Icon, IconButton, Img, Text, useColorMode } from '@chakra-ui/react'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { useMenuContext } from '../contexts/MenuContext'
 import { motion } from 'framer-motion'
 import { useIsLarge } from '../hooks/useMediaQuery'
 import { MenuLinks } from './MenuLinks'
-import { useEffect } from 'react'
+import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 export function Header() {
 
@@ -18,6 +18,8 @@ export function Header() {
         visible: { opacity: 1 },
         hidden: { opacity: 1 },
     }
+
+    const { colorMode, toggleColorMode } = useColorMode()
 
     return (
         <Box
@@ -52,6 +54,11 @@ export function Header() {
                     w="100%"
                 >
                     <MenuLinks />
+                    {/* <IconButton
+                        icon={colorMode == 'light' ? <MoonIcon /> : <SunIcon />}
+                        onClick={toggleColorMode}
+                        aria-label=""
+                    /> */}
                 </Flex>
             </Flex>
 
