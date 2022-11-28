@@ -1,15 +1,22 @@
-import { Box, Button, Divider, Flex, Icon, Link, Text } from "@chakra-ui/react";
-import { AiOutlineMail, AiOutlinePhone, AiOutlineWhatsApp } from "react-icons/ai"
+import { Box, Button, Divider, Flex, Spinner, Text } from "@chakra-ui/react";
+import { AiOutlineWhatsApp } from "react-icons/ai"
 import { Section } from "../CurrentSection";
 import { DefaultTitle } from "../DefaultTitle";
 import * as yup from "yup"
 import { yupResolver } from "@hookform/resolvers/yup";
-import { useForm } from "react-hook-form";
+import { FieldValues, useForm } from "react-hook-form";
 import { DefaultField } from "../../components/DefaultField"
-import { SocialButton } from "../socialButton";
 import { FiLinkedin } from "react-icons/fi";
+import { SocialButton } from "../SocialButton";
+import axios from "axios";
+import { api } from "../../services/axios";
+import { toast, ToastContainer } from "react-toastify";
+import { notify } from "../../utils/notify";
+import { useState } from "react";
 
 export function ContactSection() {
+
+    const [loading, setLoading] = useState(false)
 
     const schema = yup.object().shape({
         name: yup.string().required('Digite seu nome'),
@@ -17,19 +24,23 @@ export function ContactSection() {
         message: yup.string().required('Digite uma mensagem'),
     })
 
-    const { register, formState: { errors }, getValues, handleSubmit } = useForm({
+    const { register, formState: { errors }, handleSubmit } = useForm({
         resolver: yupResolver(schema)
     })
 
-    async function sendEmail() {
-
+    async function sendEmail(data: FieldValues) {
+        setLoading(true)
+        const res = await api.post("/mail", data)
+        res.status == 200 && notify("E-mail enviado com sucesso")
+        res.status == 500 && notify("Ocorreu um erro")
+        setLoading(false)
     }
 
     return (
         <Flex align="center" direction="column">
             <DefaultTitle title="Contato" />
             <Section id="contact" direction="column" w="100%">
-                <Flex justify="flex-start" gap={5} w="100%" maxW="700px">
+                <Flex justify="flex-start" direction={{ base: "column", lg: "row" }} gap={5} w="100%" maxW="700px">
                     <Flex gap={5}>
                         <SocialButton
                             icon={AiOutlineWhatsApp}
@@ -47,35 +58,40 @@ export function ContactSection() {
 
                     <Divider orientation="vertical" />
 
-                    <Flex direction="column" gap={5} flex="3">
+                    <Flex as="form" direction="column" gap={5} flex="3" onSubmit={handleSubmit(sendEmail)}>
                         <Box>
-                            <Text size="sm">Nome</Text>
+                            <Text fontSize="lg">Nome</Text>
                             <DefaultField formRegister={register} registerName="name" />
-                            {errors.name?.message && <Box className='error-message'>{errors.name?.message.toString()}</Box>}
+                            {errors.name?.message && <Box className='error-message' color="red.700">{errors.name?.message.toString()}</Box>}
                         </Box>
 
                         <Box>
-                            <Text size="sm">E-mail</Text>
+                            <Text fontSize="lg">E-mail</Text>
                             <DefaultField formRegister={register} registerName="email" />
-                            {errors.email?.message && <Box className='error-message'>{errors.email?.message.toString()}</Box>}
+                            {errors.email?.message && <Box className='error-message' color="red.700">{errors.email?.message.toString()}</Box>}
                         </Box>
 
                         <Box>
-                            <Text size="sm">Mensagem</Text>
+                            <Text fontSize="lg">Mensagem</Text>
                             <DefaultField formRegister={register} registerName="message" as="textarea" h="200px" />
-                            {errors.message?.message && <Box className='error-message'>{errors.message?.message.toString()}</Box>}
+                            {errors.message?.message && <Box className='error-message' color="red.700">{errors.message?.message.toString()}</Box>}
                         </Box>
 
                         <Button
-                            onClick={() => handleSubmit(sendEmail)}
+                            type="submit"
                             bg="primary"
                             color="black"
                             _hover={{
                                 opacity: 0.8
                             }}
-                        >Enviar</Button>
+                        >
+                            {
+                                !loading ? "Enviar" : <Spinner color="black" />
+                            }
+                        </Button>
                     </Flex>
                 </Flex>
+                <ToastContainer />
             </Section >
         </Flex>
     )

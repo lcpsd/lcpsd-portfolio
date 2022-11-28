@@ -4,6 +4,7 @@ import type { AppProps } from 'next/app'
 import 'swiper/css';
 import 'swiper/css/pagination';
 import '../styles/global.css'
+import 'react-toastify/dist/ReactToastify.css';
 import { theme } from '../styles/theme';
 import { MenuContextProvider } from '../contexts/MenuContext';
 import { CurrentSectionContextProvider } from '../components/CurrentSection/Context';
