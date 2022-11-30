@@ -12,13 +12,11 @@ export function TechCard({ data: { id, logoUrl, description } }: TechCardProps) 
 
     return (
         <Flex key={id}
-            h="100%"
+            h="250px"
             w="100%"
             p={5}
             bg="#161325"
-            border="1px"
-            borderColor="transparent"
-            borderBottomColor="primary"
+            borderRadius="md"
             gap={5}
         >
             <Flex flex="1" align="center" justify="center">
