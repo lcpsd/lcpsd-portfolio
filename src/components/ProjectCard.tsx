@@ -26,7 +26,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 </Text>
             </Flex>
             <DefaultLink url={project.url ?? ""}>
-                <Button color="white" w="100%" border="1px" borderColor="quaternary">
+                <Button color="white" w="100%" border="1px" borderColor="quaternary" bg="quinary" colorScheme="black">
                     Repositório <Icon as={FiGithub} />
                 </Button>
             </DefaultLink>
