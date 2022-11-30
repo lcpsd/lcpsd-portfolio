@@ -24,6 +24,8 @@ export function ProjectCard({ project }: ProjectCardProps) {
             bgPos="center"
             bgSize="cover"
             bgRepeat="no-repeat"
+            as={DefaultLink}
+            url={project.url}
         >
             <Box
                 w="100%"
