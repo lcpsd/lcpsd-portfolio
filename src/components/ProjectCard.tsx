@@ -1,4 +1,5 @@
-import { Button, Flex, Icon, Img, Text } from "@chakra-ui/react";
+import { Box, Button, Flex, Icon, Img, Text } from "@chakra-ui/react";
+import { useState } from "react";
 import { FiGithub } from "react-icons/fi";
 import { ProjectProps } from "../types/project";
 import { DefaultLink } from "./DefaultLink";
@@ -10,26 +11,56 @@ interface ProjectCardProps {
 export function ProjectCard({ project }: ProjectCardProps) {
 
     return (
-        <Flex direction="column" minH="300px" p={5} border="1px" borderColor="quaternary" rounded="md" gap={5}>
-            <Flex align="center" flex="1">
-                <Img
-                    src={project.screenshot ?? ""}
-                    rounded="xl"
+        <Flex
+            direction="column"
+            minH="400px"
+            w="100%"
+            border="1px"
+            borderColor="quaternary"
+            rounded="md"
+            gap={5}
+            position="relative"
+            bgImg={project.screenshot}
+            bgPos="center"
+            bgSize="cover"
+            bgRepeat="no-repeat"
+        >
+            <Box
+                w="100%"
+                h="100%"
+                opacity={{ base: "1", md: "0.2" }}
+                transition="all 0.2s"
+                _hover={{
+                    opacity: "1"
+                }}
+                cursor="pointer"
+            >
+                <Flex
+                    flex="1"
+                    direction="column"
+                    p={5}
+                    position="absolute"
+                    bottom="0"
+                    zIndex="10"
+                >
+                    <Text fontWeight="bold" color="primary" fontSize="xl">
+                        {project.title}
+                    </Text>
+                    <Text>
+                        {project.description}
+                    </Text>
+
+                </Flex>
+                <Box
+                    position="absolute"
+                    w="100%"
+                    h="100%"
+                    top="0"
+                    left="0"
+                    bgGradient="linear-gradient(to-t, quinary, transparent)"
+                    rounded="md"
                 />
-            </Flex>
-            <Flex flex="1" direction="column">
-                <Text fontWeight="bold" color="primary" fontSize="xl">
-                    {project.title}
-                </Text>
-                <Text>
-                    {project.description}
-                </Text>
-            </Flex>
-            <DefaultLink url={project.url ?? ""}>
-                <Button color="white" w="100%" border="1px" borderColor="quaternary" bg="quinary" colorScheme="black">
-                    Repositório <Icon as={FiGithub} />
-                </Button>
-            </DefaultLink>
+            </Box>
         </Flex>
     )
 }
