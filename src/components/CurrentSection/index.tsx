@@ -3,7 +3,7 @@ import { ReactNode, useEffect, useState } from 'react'
 import { useCurrentSectionContext } from './Context'
 
 interface SectionProps extends FlexProps {
-    id: string;
+    id?: string;
     children:
     | ReactNode
     | JSX.Element[]
