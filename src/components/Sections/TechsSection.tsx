@@ -13,7 +13,7 @@ export function TechSection() {
     async function FetchTechs() {
         const projects = await client.getAllByType('techs')
 
-        const sanitized = projects.map(project => {
+        const sanitized: TechProps[] = projects.map((project: any) => {
             return {
                 id: project.data.id,
                 title: project.data.title,

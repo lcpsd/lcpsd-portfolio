@@ -41,3 +41,5 @@ node_modules/
 .secret-*
 **.sample
 #amplify-do-not-edit-end
+
+.env

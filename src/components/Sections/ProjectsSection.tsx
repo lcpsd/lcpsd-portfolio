@@ -1,11 +1,8 @@
-import { Box, Button, Flex, Icon, Img, SimpleGrid, Text } from "@chakra-ui/react";
-import { DataStore } from "aws-amplify";
-import Image from "next/image";
+import { SimpleGrid } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { FiGithub } from "react-icons/fi";
 import { client } from "../../services/primisc";
+import { ProjectProps } from "../../types/project";
 import { Section } from "../CurrentSection";
-import { DefaultLink } from "../DefaultLink";
 import { DefaultTitle } from "../DefaultTitle";
 import { ProjectCard } from "../ProjectCard";
 
@@ -16,8 +13,9 @@ export function ProjectsSection() {
     async function fetchProjects() {
         const projects = await client.getAllByType('projects')
 
-        const sanitized = projects.map(project => {
+        const sanitized: ProjectProps[] = projects.map(project => {
             return {
+                id: project.data.id,
                 title: project.data.title,
                 description: project.data.description,
                 screenshot: project.data.screenshot.url,

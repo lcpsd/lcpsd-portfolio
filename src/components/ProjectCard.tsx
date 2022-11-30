@@ -3,7 +3,11 @@ import { FiGithub } from "react-icons/fi";
 import { ProjectProps } from "../types/project";
 import { DefaultLink } from "./DefaultLink";
 
-export function ProjectCard({ project }: ProjectProps) {
+interface ProjectCardProps {
+    project: ProjectProps;
+}
+
+export function ProjectCard({ project }: ProjectCardProps) {
 
     return (
         <Flex direction="column" minH="300px" p={5} border="1px" borderColor="quaternary" rounded="md" gap={5}>

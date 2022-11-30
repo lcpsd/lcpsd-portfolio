@@ -20,8 +20,6 @@
     "@prismicio/react": "^2.5.0",
     "@prismicio/slice-simulator-react": "^0.2.2",
     "@types/styled-components": "^5.1.26",
-    "amplify": "^0.0.11",
-    "aws-amplify": "^4.3.32",
     "axios": "^0.27.2",
     "framer-motion": "^7.2.0",
     "mailer-send-ts": "^1.7.0",
