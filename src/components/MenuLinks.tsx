@@ -1,6 +1,5 @@
 import { Flex, Text } from "@chakra-ui/react";
 import { ActiveLink } from "./ActiveLink";
-import { DefaultLink } from "./DefaultLink";
 
 export function MenuLinks() {
 

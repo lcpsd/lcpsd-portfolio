@@ -1,15 +1,13 @@
 import { Button, Flex, Text, Textarea } from "@chakra-ui/react";
-import { FieldValues, useForm } from "react-hook-form";
-import { Container } from "../Container";
-import { DefaultField } from "../DefaultField";
-import { DefaultTitle } from "../DefaultTitle";
-import { yupResolver } from '@hookform/resolvers/yup'
-import * as yup from 'yup'
-import { Section } from "../CurrentSection";
-import { DataStore } from "aws-amplify";
-import { maskPhone } from "../../utils/maskPhone";
+import { yupResolver } from '@hookform/resolvers/yup';
 import { ChangeEvent, useEffect, useState } from "react";
+import { FieldValues, useForm } from "react-hook-form";
+import * as yup from 'yup';
+import { maskPhone } from "../../utils/maskPhone";
+import { Section } from "../CurrentSection";
+import { DefaultField } from "../DefaultField";
 import { DefaultLink } from "../DefaultLink";
+import { DefaultTitle } from "../DefaultTitle";
 
 export function FormSection() {
 

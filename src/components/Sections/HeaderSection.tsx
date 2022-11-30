@@ -1,7 +1,5 @@
-import { Box, Flex, Icon, Text } from "@chakra-ui/react";
-import { IoIosArrowForward } from "react-icons/io";
+import { Flex } from "@chakra-ui/react";
 import { Section } from "../CurrentSection";
-import { Header } from "../Header";
 import { HeaderTitle } from "../HeaderTitle";
 import { Profile } from "../Profile";
 import { ScrollDownText } from "../ScrollDownText";

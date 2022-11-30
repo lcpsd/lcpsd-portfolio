@@ -1,10 +1,9 @@
-import { Box, Button, Flex, Icon, IconButton, Img, Text, useColorMode } from '@chakra-ui/react'
+import { Box, Flex, Icon, useColorMode } from '@chakra-ui/react'
+import { motion } from 'framer-motion'
 import { AiOutlineClose, AiOutlineMenu } from 'react-icons/ai'
 import { useMenuContext } from '../contexts/MenuContext'
-import { motion } from 'framer-motion'
 import { useIsLarge } from '../hooks/useMediaQuery'
 import { MenuLinks } from './MenuLinks'
-import { MoonIcon, SunIcon } from '@chakra-ui/icons'
 
 export function Header() {
 

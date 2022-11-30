@@ -1,18 +1,17 @@
 import { Box, Button, Divider, Flex, Spinner, Text } from "@chakra-ui/react";
-import { AiOutlineWhatsApp } from "react-icons/ai"
+import { yupResolver } from "@hookform/resolvers/yup";
+import { useState } from "react";
+import { FieldValues, useForm } from "react-hook-form";
+import { AiOutlineWhatsApp } from "react-icons/ai";
+import { FiLinkedin } from "react-icons/fi";
+import { ToastContainer } from "react-toastify";
+import * as yup from "yup";
+import { DefaultField } from "../../components/DefaultField";
+import { api } from "../../services/axios";
+import { notify } from "../../utils/notify";
 import { Section } from "../CurrentSection";
 import { DefaultTitle } from "../DefaultTitle";
-import * as yup from "yup"
-import { yupResolver } from "@hookform/resolvers/yup";
-import { FieldValues, useForm } from "react-hook-form";
-import { DefaultField } from "../../components/DefaultField"
-import { FiLinkedin } from "react-icons/fi";
 import { SocialButton } from "../SocialButton";
-import axios from "axios";
-import { api } from "../../services/axios";
-import { toast, ToastContainer } from "react-toastify";
-import { notify } from "../../utils/notify";
-import { useState } from "react";
 
 export function ContactSection() {
 

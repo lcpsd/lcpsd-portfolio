@@ -1,9 +1,8 @@
-import { Box, ChakraStyledOptions, Flex, Icon, Text } from "@chakra-ui/react";
+import { Box, Flex, Icon, Text } from "@chakra-ui/react";
 import Link from "next/link";
 import { FiGithub, FiLinkedin, FiMapPin } from "react-icons/fi";
 import { FloatingIcon } from "./FloatingIcon";
 import { ProfilePicture } from "./ProfilePicture";
-import { DataStore } from '@aws-amplify/datastore';
 import { useEffect, useState } from "react";
 import { client } from "../services/primisc";
 

@@ -1,4 +1,4 @@
-import { Box, chakra, ChakraStyledOptions } from "@chakra-ui/react";
+import { chakra, ChakraStyledOptions } from "@chakra-ui/react";
 import { isValidMotionProp, motion } from "framer-motion";
 
 interface ProfilePicture extends ChakraStyledOptions {

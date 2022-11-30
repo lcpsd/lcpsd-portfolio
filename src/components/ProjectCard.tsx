@@ -1,6 +1,4 @@
-import { Box, Button, Flex, Icon, Img, Text } from "@chakra-ui/react";
-import { useState } from "react";
-import { FiGithub } from "react-icons/fi";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import { ProjectProps } from "../types/project";
 import { DefaultLink } from "./DefaultLink";
 
