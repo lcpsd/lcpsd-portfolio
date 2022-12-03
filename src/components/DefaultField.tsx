@@ -9,6 +9,6 @@ interface DefaultFieldProps extends ChakraStyledOptions, UseFormProps, React.HTM
 export function DefaultField({ registerName, formRegister, ...rest }: DefaultFieldProps) {
 
     return (
-        <Input border='1px' borderColor="quaternary" rounded="2xl" bg='quinary' {...formRegister(registerName)} {...rest} />
+        <Input border='1px' borderColor="quaternary" rounded="2xl" bg='quinary' colorScheme="black" {...formRegister(registerName)} {...rest} />
     )
 }
