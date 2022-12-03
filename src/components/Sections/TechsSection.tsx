@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { client } from "../../services/primisc";
 import { TechProps } from "../../types/tech";
 import { Section } from "../CurrentSection";
-import { DefaultTitle } from "../DefaultTitle";
+import { DefaultTitle } from "../default/DefaultTitle";
 import { TechCard } from "../TechCard";
 
 export function TechSection() {

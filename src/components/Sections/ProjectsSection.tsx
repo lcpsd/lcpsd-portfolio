@@ -3,7 +3,7 @@ import { useEffect, useState } from "react";
 import { client } from "../../services/primisc";
 import { ProjectProps } from "../../types/project";
 import { Section } from "../CurrentSection";
-import { DefaultTitle } from "../DefaultTitle";
+import { DefaultTitle } from "../default/DefaultTitle";
 import { ProjectCard } from "../ProjectCard";
 
 export function ProjectsSection() {

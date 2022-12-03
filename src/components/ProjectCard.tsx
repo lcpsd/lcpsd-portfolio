@@ -1,6 +1,6 @@
 import { Box, Flex, Text } from "@chakra-ui/react";
 import { ProjectProps } from "../types/project";
-import { DefaultLink } from "./DefaultLink";
+import { DefaultLink } from "./default/DefaultLink";
 
 interface ProjectCardProps {
     project: ProjectProps;

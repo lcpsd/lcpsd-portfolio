@@ -3,8 +3,8 @@ import { useEffect, useState } from "react";
 import { SwiperSlide } from "swiper/react";
 import { client } from "../../services/primisc";
 import { Section } from "../CurrentSection";
-import { DefaultCarousel } from "../DefaultCarousel";
-import { DefaultTitle } from "../DefaultTitle";
+import { DefaultCarousel } from "../default/DefaultCarousel";
+import { DefaultTitle } from "../default/DefaultTitle";
 
 interface CertificationProps {
     id: number;

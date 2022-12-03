@@ -5,9 +5,9 @@ import { FieldValues, useForm } from "react-hook-form";
 import * as yup from 'yup';
 import { maskPhone } from "../../utils/maskPhone";
 import { Section } from "../CurrentSection";
-import { DefaultField } from "../DefaultField";
-import { DefaultLink } from "../DefaultLink";
-import { DefaultTitle } from "../DefaultTitle";
+import { DefaultField } from "../default/DefaultField";
+import { DefaultLink } from "../default/DefaultLink";
+import { DefaultTitle } from "../default/DefaultTitle";
 
 export function FormSection() {
 

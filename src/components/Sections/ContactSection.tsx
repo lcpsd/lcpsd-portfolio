@@ -6,11 +6,11 @@ import { AiOutlineWhatsApp } from "react-icons/ai";
 import { FiLinkedin } from "react-icons/fi";
 import { ToastContainer } from "react-toastify";
 import * as yup from "yup";
-import { DefaultField } from "../../components/DefaultField";
+import { DefaultField } from "../../components/default/DefaultField";
 import { api } from "../../services/axios";
 import { notify } from "../../utils/notify";
 import { Section } from "../CurrentSection";
-import { DefaultTitle } from "../DefaultTitle";
+import { DefaultTitle } from "../default/DefaultTitle";
 import { SocialButton } from "../SocialButton";
 
 export function ContactSection() {
