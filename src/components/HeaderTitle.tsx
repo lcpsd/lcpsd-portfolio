@@ -18,12 +18,12 @@ export function HeaderTitle({ ...rest }: ChakraStyledOptions) {
                 textColor="transparent"
                 fontWeight="semibold"
                 lineHeight="4rem"
-            >Front-end JamStack</Text>
+            >Desenvolvedor Full Stack</Text>
 
             <Text
                 textTransform="uppercase"
                 fontSize={["lg", "xl", "2xl"]}
-            >React | Next | TS | Chakra UI  E +
+            >Next.js | Typescript | Chakra UI | Mongo DB
             </Text>
         </Flex>
     )
