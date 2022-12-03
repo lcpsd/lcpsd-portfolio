@@ -1,7 +1,5 @@
 import { Box, Flex, } from '@chakra-ui/react'
 import type { NextPage } from 'next'
-import { BgNoise } from '../components/BgNoise'
-import { BigLight } from '../components/BigLight'
 import { CurrentSection } from '../components/CurrentSection'
 import { DefaultDivider } from '../components/default/DefaultDivider'
 import { Footer } from '../components/Footer'
@@ -19,7 +17,6 @@ const Home: NextPage = () => {
     <Box
       position="relative"
     >
-      <BgNoise />
       <Header />
       <CurrentSection />
       <Flex
