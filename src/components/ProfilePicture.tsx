@@ -19,11 +19,11 @@ export function ProfilePicture({ pictureUrl, ...rest }: ProfilePicture) {
     return (
         <ChakraBox
             bgImage={`${pictureUrl}`}
-            bgSize={{ base: "350px", md: "400px", lg: "525px" }}
+            bgSize={{ base: "350px", md: "325px", lg: "450px" }}
             bgRepeat="no-repeat"
             rounded="full"
-            h={{ base: "300px", md: "300px", lg: "450px" }}
-            w={{ base: "300px", md: "300px", lg: "450px" }}
+            h={{ base: "300px", md: "300px", lg: "400px" }}
+            w={{ base: "300px", md: "300px", lg: "400px" }}
             borderColor="primary !important"
             border="2px"
             position="relative"

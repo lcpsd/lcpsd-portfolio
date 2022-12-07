@@ -31,17 +31,7 @@ export function Profile() {
         <Flex direction="column" align="center">
             <ProfilePicture pictureUrl={profileData?.avatarUrl ?? ""} />
 
-            <Flex w="100%" justify="center" py={5} gap={5}>
-                <Link href={profileData?.github ?? ""}>
-                    <FloatingIcon icon={FiGithub} />
-                </Link>
-
-                <Link href={profileData?.linkedIn ?? ""}>
-                    <FloatingIcon icon={FiLinkedin} />
-                </Link>
-            </Flex>
-
-            <Flex justify="center" gap={{ base: 5, md: 2 }}>
+            <Flex justify="center" mt={2}>
                 <Icon as={FiMapPin} fontSize="2rem" />
                 <Text textAlign="center" fontSize="2xl" color="primary">{profileData?.location ?? ""}</Text>
             </Flex>
