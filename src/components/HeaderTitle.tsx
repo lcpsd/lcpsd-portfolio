@@ -1,4 +1,4 @@
-import { Button, ChakraStyledOptions, Flex, Text } from "@chakra-ui/react";
+import { Box, Button, ChakraStyledOptions, Flex, Text } from "@chakra-ui/react";
 import Link from "next/link";
 
 export function HeaderTitle({ ...rest }: ChakraStyledOptions) {
@@ -29,18 +29,21 @@ export function HeaderTitle({ ...rest }: ChakraStyledOptions) {
             >React | Next | TS | Chakra UI | Mongo DB
             </Text>
 
-            <Link href="https://forms.gle/YvM2GEirsMQqCUPQ6">
-                <>
+            <Box w="100%">
+                <Link href="https://forms.gle/YvM2GEirsMQqCUPQ6" target="_blank">
                     <Button
                         w="100%"
                         maxW="300px"
                         bg="primary"
                         color="black"
                         fontSize={20}
+                        _hover={{
+                            filter: "opacity(0.8)"
+                        }}
                     >Orçamento</Button>
-                    <Text fontSize={12}>Sem compromisso</Text>
-                </>
-            </Link>
+                </Link>
+                <Text fontSize={12}>Sem compromisso</Text>
+            </Box>
         </Flex>
     )
 }
