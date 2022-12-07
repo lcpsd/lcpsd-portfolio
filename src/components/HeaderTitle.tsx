@@ -23,7 +23,7 @@ export function HeaderTitle({ ...rest }: ChakraStyledOptions) {
             <Text
                 textTransform="uppercase"
                 fontSize={["lg", "xl", "2xl"]}
-            >Next.js | Typescript | Chakra UI | Mongo DB
+            >React | Next | TS | Chakra UI | Mongo DB
             </Text>
         </Flex>
     )
