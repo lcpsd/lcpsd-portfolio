@@ -28,7 +28,7 @@ export function Profile() {
     }, [])
 
     return (
-        <Box>
+        <Flex direction="column" align="center">
             <ProfilePicture pictureUrl={profileData?.avatarUrl ?? ""} />
 
             <Flex w="100%" justify="center" py={5} gap={5}>
@@ -41,10 +41,10 @@ export function Profile() {
                 </Link>
             </Flex>
 
-            <Flex align="center" justify="center">
+            <Flex justify="center" gap={{ base: 5, md: 2 }}>
                 <Icon as={FiMapPin} fontSize="2rem" />
-                <Text fontSize="2xl" color="primary">{profileData?.location ?? ""}</Text>
+                <Text textAlign="center" fontSize="2xl" color="primary">{profileData?.location ?? ""}</Text>
             </Flex>
-        </Box>
+        </Flex>
     )
 }

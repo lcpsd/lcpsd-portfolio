@@ -2,7 +2,6 @@ import { Flex } from "@chakra-ui/react";
 import { Section } from "../CurrentSection";
 import { HeaderTitle } from "../HeaderTitle";
 import { Profile } from "../Profile";
-import { ScrollDownText } from "../ScrollDownText";
 import { VideoBg } from "../videoBg";
 
 export function HeaderSection() {
@@ -22,8 +21,6 @@ export function HeaderSection() {
                     <Profile />
                 </Flex>
             </Flex>
-
-            <ScrollDownText />
 
             <Flex
                 position="absolute"
